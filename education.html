@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Education Grant Programme — Tutumatai Station</title>
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#2d5a96;--sky-dark:#1e3d6b;--pasture:#4a6828;--pasture-mid:#384f1e;--pasture-light:#607040;--off-white:#f4f7f0;--light-sky:#e8f0f8;--cream:#faf8f2;--text:#1a2a1a;--text-mid:#3a4a3a;--text-light:#5a6a5a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(30,61,107,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.nav-logo{font-family:'Dancing Script',cursive;font-size:1.5rem;color:white;line-height:1;text-decoration:none;}
+.nav-logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:300;margin-top:2px;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:white;}
+.nav-portal{background:var(--pasture)!important;color:white!important;padding:0.4rem 1rem;border-radius:2px;font-weight:600!important;}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:white;border-radius:1px;}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(30,61,107,0.98);z-index:99;padding:1rem 0;border-bottom:2px solid var(--pasture);}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.8rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-mobile a:hover{color:white;background:rgba(255,255,255,0.05);}
+.nav-mobile .mob-portal{background:var(--pasture);color:white!important;margin:0.8rem 2rem 0;padding:0.7rem 1rem;text-align:center;display:block;}
+.hero{margin-top:64px;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center center;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.45) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 4rem 3rem;}
+.eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.7rem;font-weight:300;}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
+.hero h1{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,5vw,4.2rem);color:white;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:0.5rem;}
+.hero-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:500px;line-height:1.6;}
+.section{padding:4.5rem 4rem;}
+.section.cream{background:var(--cream);}
+.section.sky{background:var(--light-sky);}
+.inner{max-width:1200px;margin:0 auto;}
+.sec-label{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--pasture);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;font-weight:600;}
+.sec-label::before{content:'';display:block;width:18px;height:2px;background:var(--pasture);}
+h2{font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--sky-dark);line-height:1.2;margin-bottom:0.8rem;}
+.lead{color:var(--text-mid);font-size:0.96rem;line-height:1.85;font-weight:300;max-width:700px;margin-bottom:1rem;}
+.apply-banner{background:var(--pasture-mid);padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.apply-banner p{color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:300;}
+.apply-banner strong{color:white;}
+.btn-apply{display:inline-block;background:white;color:var(--pasture-mid);padding:0.6rem 1.4rem;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;}
+.grant-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(74,104,40,0.12);border:1px solid rgba(74,104,40,0.12);margin-top:1.5rem;}
+.gs-item{background:white;padding:1.4rem;}
+.gs-num{font-family:'Dancing Script',cursive;font-size:2rem;color:var(--pasture);line-height:1;margin-bottom:0.2rem;}
+.gs-label{font-size:0.78rem;font-weight:600;color:var(--sky-dark);margin-bottom:0.3rem;}
+.gs-desc{font-size:0.74rem;color:var(--text-light);line-height:1.5;font-weight:300;}
+/* Recipients */
+.recipients{display:grid;grid-template-columns:repeat(5,1fr);gap:0.8rem;margin-top:1.5rem;}
+.r-card{background:white;border-top:2px solid var(--pasture);overflow:hidden;}
+.r-photo{width:100%;height:150px;object-fit:cover;object-position:center 20%;display:block;}
+.r-ph{width:100%;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.r-ph .r-icon{font-size:1.6rem;opacity:0.3;}
+.r-ph span{font-family:monospace;font-size:0.55rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);padding:0.1rem 0.3rem;border-radius:2px;text-align:center;max-width:90%;word-break:break-all;display:block;}
+.r-body{padding:0.7rem;}
+.r-name{font-family:'Dancing Script',cursive;font-size:1rem;color:var(--sky-dark);line-height:1.2;margin-bottom:0.2rem;}
+.r-course{font-size:0.68rem;color:var(--text-light);font-weight:300;line-height:1.3;margin-bottom:0.3rem;}
+.r-result{font-size:0.65rem;color:var(--pasture);font-weight:600;font-style:italic;}
+/* Past table */
+.past-wrap{max-height:320px;overflow-y:auto;margin-top:1.2rem;border:1px solid rgba(74,104,40,0.12);}
+.past-table{width:100%;border-collapse:collapse;font-size:0.8rem;}
+.past-table th{text-align:left;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);font-weight:600;padding:0.55rem 0.8rem;border-bottom:2px solid rgba(74,104,40,0.2);background:white;position:sticky;top:0;}
+.past-table td{padding:0.55rem 0.8rem;border-bottom:1px solid rgba(74,104,40,0.08);color:var(--text-mid);font-weight:300;}
+.past-table tr:last-child td{border-bottom:none;}
+.criteria-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-top:1.2rem;max-width:700px;}
+.criteria-list li{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.85rem;color:var(--text-mid);font-weight:300;line-height:1.6;}
+.criteria-list li::before{content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--pasture);flex-shrink:0;margin-top:0.55rem;}
+footer{background:#111e2e;padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--pasture);}
+footer .logo{font-family:'Dancing Script',cursive;font-size:1.3rem;color:white;}
+footer .logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:300;margin-top:2px;}
+footer p{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+@media(max-width:900px){.recipients{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-mobile.open{display:block;}
+  .hero-content{padding:0 1.5rem 2rem;}
+  .section{padding:3rem 1.5rem;}
+  .apply-banner{padding:1.2rem 1.5rem;}
+  .grant-grid{grid-template-columns:1fr;}
+  .recipients{grid-template-columns:repeat(2,1fr);}
+  footer{flex-direction:column;gap:1rem;padding:2rem 1.5rem;text-align:center;}
+}
+@media(max-width:480px){
+  .recipients{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · Tairāwhiti</span></a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/farm.html">The Farm</a></li>
+    <li><a href="/people.html">Our People</a></li>
+    <li><a href="/education.html" class="active">Education</a></li>
+    <li><a href="/news.html">News</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="#portal" class="nav-portal" style="opacity:0.6;cursor:default;" title="Coming soon">Portal — Coming Soon</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="/about.html">About</a>
+  <a href="/farm.html">The Farm</a>
+  <a href="/people.html">Our People</a>
+  <a href="/education.html" class="active">Education</a>
+  <a href="/news.html">News</a>
+  <a href="/contact.html">Contact</a>
+  <a href="#portal" class="mob-portal" style="opacity:0.6;">Shareholder Portal — Coming Soon</a>
+</div>
+
+<!-- ✏️ Hero photo: education-hero.jpg -->
+<section class="hero" style="height:55vh;">
+  <div class="hero-img" style="background-image:url('/images/education-hero.jpg');"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Descendants of Raana Te Iti Walker &amp; Mere Roa Milner</div>
+    <h1>Education Grants</h1>
+    <p class="hero-sub">Supporting the next generation of our whānau through tertiary education.</p>
+  </div>
+</section>
+
+<!-- ✏️ Update status and deadline each year -->
+<div class="apply-banner">
+  <p><strong>2026 applications are closed.</strong> Accepting applications for 2027 from February 2027. All descendants of Raana Te Iti Walker and Mere Roa Milner in tertiary study are eligible.</p>
+  <a href="#criteria" class="btn-apply">Eligibility Criteria →</a>
+</div>
+
+<section class="section cream">
+  <div class="inner">
+    <div class="sec-label">The programme</div>
+    <h2>Investing in our people</h2>
+    <p class="lead">Established in 2025 to provide financial support to descendants in tertiary study. Up to $5,000 available annually across all recipients.</p>
+    <div class="grant-grid">
+      <div class="gs-item"><div class="gs-num">$1,000</div><div class="gs-label">Base grant per year</div><div class="gs-desc">For eligible descendants enrolled full-time across two semesters</div></div>
+      <div class="gs-item"><div class="gs-num">$1,200</div><div class="gs-label">Maximum incl. excellence bonus</div><div class="gs-desc">10–20% bonus for distinction or high distinction results</div></div>
+      <div class="gs-item"><div class="gs-num">70 / 30</div><div class="gs-label">Payment structure</div><div class="gs-desc">70% upfront on signing · 30% on evidence of completion</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ 2026 RECIPIENTS
+     To add a photo: replace the r-ph div with:
+     <img src="/images/FILENAME.jpg" class="r-photo" alt="Name">
+     Gradient colours are page accents — leave as-is unless asked.
+-->
+<section class="section" id="2026-recipients">
+  <div class="inner">
+    <div class="sec-label">2026 recipients</div>
+    <h2>Class of 2026</h2>
+    <div class="recipients">
+      <div class="r-card">
+        <img src="/images/education-2026-1.jpg" class="r-photo" alt="education-2026-1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#2d5a96,#2d5a9699);"><div class="r-icon">👤</div><span>education-2026-1.jpg</span></div>
+        <div class="r-body"><div class="r-name">Beaudeen Walker Ansell</div><div class="r-course">Open Poly · BTeach Yr 2</div><div class="r-result">Continuing</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2026-2.jpg" class="r-photo" alt="education-2026-2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#3D5A3E,#3D5A3E99);"><div class="r-icon">👤</div><span>education-2026-2.jpg</span></div>
+        <div class="r-body"><div class="r-name">Kaia Walker-Waitoa</div><div class="r-course">Te Wānanga o Raukawa</div><div class="r-result">Year 1</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2026-3.jpg" class="r-photo" alt="education-2026-3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#4a6828,#4a682899);"><div class="r-icon">👤</div><span>education-2026-3.jpg</span></div>
+        <div class="r-body"><div class="r-name">Ripia Walker-Waitoa</div><div class="r-course">Open Poly · Dip Psychology</div><div class="r-result">Year 1 · 1 semester</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2026-4.jpg" class="r-photo" alt="education-2026-4.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#384f1e,#384f1e99);"><div class="r-icon">👤</div><span>education-2026-4.jpg</span></div>
+        <div class="r-body"><div class="r-name">Taurua Luke-Royal</div><div class="r-course">Competenz · Engineering L4</div><div class="r-result">Final yr apprentice</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2026-5.jpg" class="r-photo" alt="education-2026-5.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#5a6a5a,#5a6a5a99);"><div class="r-icon">👤</div><span>education-2026-5.jpg</span></div>
+        <div class="r-body"><div class="r-name">Te Manaia Apatu</div><div class="r-course">Massey · Creative Arts (Fashion)</div><div class="r-result">Year 1</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2026-6.jpg" class="r-photo" alt="education-2026-6.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#2d5a96,#2d5a9699);"><div class="r-icon">👤</div><span>education-2026-6.jpg</span></div>
+        <div class="r-body"><div class="r-name">Tuakana Walker</div><div class="r-course">Te Wānanga o Raukawa</div><div class="r-result">Final year</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2026-7.jpg" class="r-photo" alt="education-2026-7.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#4a6828,#4a682899);"><div class="r-icon">👤</div><span>education-2026-7.jpg</span></div>
+        <div class="r-body"><div class="r-name">Georgia Walker-Miller</div><div class="r-course">EIT · BBS Year 2</div><div class="r-result">Late app approved</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ 2025 recipients -->
+<section class="section sky">
+  <div class="inner">
+    <div class="sec-label">2025 recipients</div>
+    <h2>Class of 2025</h2>
+    <div class="recipients">
+      <div class="r-card">
+        <img src="/images/education-2025-1.jpg" class="r-photo" alt="education-2025-1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#3D5A3E,#3D5A3E99);"><div class="r-icon">👤</div><span>education-2025-1.jpg</span></div>
+        <div class="r-body"><div class="r-name">Paige Walker</div><div class="r-course">AUT · MAppPrac IT</div><div class="r-result">HD · 5× A/A+</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2025-2.jpg" class="r-photo" alt="education-2025-2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#2d5a96,#2d5a9699);"><div class="r-icon">👤</div><span>education-2025-2.jpg</span></div>
+        <div class="r-body"><div class="r-name">Beaudeen Walker Ansell</div><div class="r-course">Open Poly · BTeach</div><div class="r-result">Distinction · A/A+</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2025-3.jpg" class="r-photo" alt="education-2025-3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#4a6828,#4a682899);"><div class="r-icon">👤</div><span>education-2025-3.jpg</span></div>
+        <div class="r-body"><div class="r-name">Georgia Walker-Miller</div><div class="r-course">EIT · BBS</div><div class="r-result">Dist · 89, 86, 86</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2025-4.jpg" class="r-photo" alt="education-2025-4.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#384f1e,#384f1e99);"><div class="r-icon">👤</div><span>education-2025-4.jpg</span></div>
+        <div class="r-body"><div class="r-name">Billi-Jo Tangaere</div><div class="r-course">Auckland · PGCert ICAMH</div><div class="r-result">All 4 passed</div></div>
+      </div>
+      <div class="r-card">
+        <img src="/images/education-2025-5.jpg" class="r-photo" alt="education-2025-5.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">        <div class="r-ph" style="background:linear-gradient(135deg,#5a6a5a,#5a6a5a99);"><div class="r-icon">👤</div><span>education-2025-5.jpg</span></div>
+        <div class="r-body"><div class="r-name">Trinity Ormsby-Chemis</div><div class="r-course">EIT · BNursing</div><div class="r-result">Results pending</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ Past recipients table — add rows as years progress -->
+<section class="section cream">
+  <div class="inner">
+    <div class="sec-label">Previous recipients</div>
+    <h2 style="font-size:1.6rem;">All recipients</h2>
+    <div class="past-wrap">
+      <table class="past-table">
+        <thead><tr><th>Year</th><th>Name</th><th>Institution</th><th>Programme</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>2025</td><td>Paige Walker</td><td>AUT</td><td>MAppPrac IT</td><td>High Distinction</td></tr>
+          <tr><td>2025</td><td>Beaudeen Walker Ansell</td><td>Open Polytechnic</td><td>BTeach Primary</td><td>Distinction</td></tr>
+          <tr><td>2025</td><td>Georgia Walker-Miller</td><td>EIT</td><td>Bachelor of Business Studies</td><td>Distinction</td></tr>
+          <tr><td>2025</td><td>Billi-Jo Tangaere</td><td>University of Auckland</td><td>PGCert ICAMH</td><td>Passed</td></tr>
+          <tr><td>2025</td><td>Trinity Ormsby-Chemis</td><td>EIT</td><td>Bachelor of Nursing</td><td>Pending</td></tr>
+          <!-- ✏️ Add: <tr><td>Year</td><td>Name</td><td>Institution</td><td>Programme</td><td>Result</td></tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ Eligibility criteria -->
+<section class="section" id="criteria">
+  <div class="inner">
+    <div class="sec-label">Eligibility &amp; criteria</div>
+    <h2>Who can apply</h2>
+    <ul class="criteria-list">
+      <li>All descendants of Raana Te Iti Walker and Mere Roa Milner are eligible to apply</li>
+      <li>Must be enrolled in tertiary study at a University, Polytechnic, Wānanga, or approved private training establishment</li>
+      <li>The course must lead to a qualification or further opportunity — including trades and apprenticeships</li>
+      <li>Evidence of enrolment must be provided</li>
+      <li>Repeat applicants must provide evidence of achievement from the previous year</li>
+      <li>Applicants developing farming and farm management skills are particularly encouraged</li>
+      <li>Grants are awarded at the discretion of the Committee of Management subject to available funds</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · 307 Mangaoporo Road, RD 3, Ruatoria · Tairāwhiti</span></div>
+  <p>tutumataistation.nz — Education</p>
+</footer>
+
+<script>
+const btn = document.getElementById('hamburger');
+const mob = document.getElementById('mobileNav');
+btn.addEventListener('click', () => mob.classList.toggle('open'));
+document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tutumatai Station — Rotokautuku X1C Incorporation</title>
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#2d5a96;--sky-dark:#1e3d6b;--pasture:#4a6828;--pasture-mid:#384f1e;--pasture-light:#607040;--off-white:#f4f7f0;--light-sky:#e8f0f8;--cream:#faf8f2;--text:#1a2a1a;--text-mid:#3a4a3a;--text-light:#5a6a5a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(30,61,107,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.nav-logo{font-family:'Dancing Script',cursive;font-size:1.5rem;color:white;line-height:1;text-decoration:none;}
+.nav-logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:300;margin-top:2px;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:white;}
+.nav-portal{background:var(--pasture)!important;color:white!important;padding:0.4rem 1rem;border-radius:2px;font-weight:600!important;}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:white;border-radius:1px;}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(30,61,107,0.98);z-index:99;padding:1rem 0;border-bottom:2px solid var(--pasture);}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.8rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-mobile a:hover{color:white;background:rgba(255,255,255,0.05);}
+.nav-mobile .mob-portal{background:var(--pasture);color:white!important;margin:0.8rem 2rem 0;padding:0.7rem 1rem;text-align:center;display:block;}
+.hero{position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center center;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.45) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 4rem 4.5rem;max-width:800px;animation:fadeUp 1s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.7rem;font-weight:300;}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
+.hero h1{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,5vw,4.2rem);color:white;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:0.5rem;}
+.hero-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:500px;line-height:1.6;}
+.hero-identity{position:absolute;bottom:2.8rem;right:3rem;z-index:3;text-align:right;}
+.hero-identity .sname{font-family:'Dancing Script',cursive;font-size:2.2rem;color:white;text-shadow:0 2px 12px rgba(0,0,0,0.4);}
+.hero-identity .ssub{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.72);font-weight:300;margin-top:0.2rem;}
+.hero-identity .saddr{font-size:0.66rem;color:rgba(255,255,255,0.55);font-weight:300;margin-top:0.1rem;}
+.ctas{display:flex;gap:1rem;align-items:center;margin-top:1.8rem;flex-wrap:wrap;}
+.btn-p{background:var(--pasture);color:white;padding:0.8rem 1.8rem;font-family:'Source Sans 3',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;}
+.btn-g{color:rgba(255,255,255,0.82);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:0.4rem;}
+.btn-g::after{content:'→';}
+.section{padding:4.5rem 4rem;}
+.section.cream{background:var(--cream);}
+.section.sky{background:var(--light-sky);}
+.inner{max-width:1200px;margin:0 auto;}
+.sec-label{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--pasture);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;font-weight:600;}
+.sec-label::before{content:'';display:block;width:18px;height:2px;background:var(--pasture);}
+h2{font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--sky-dark);line-height:1.2;margin-bottom:0.8rem;}
+.lead,.body-p{color:var(--text-mid);font-size:0.96rem;line-height:1.85;font-weight:300;max-width:700px;margin-bottom:1rem;}
+.stats-strip{background:var(--sky-dark);display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--pasture);}
+.stat{padding:1.8rem 2.5rem;border-right:1px solid rgba(255,255,255,0.08);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Dancing Script',cursive;font-size:2.4rem;color:white;line-height:1;margin-bottom:0.2rem;}
+.stat-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:300;}
+.ticker{background:#384f1e;overflow:hidden;padding:0.9rem 0;}
+.ticker-inner{display:flex;animation:ticker 50s linear infinite;white-space:nowrap;width:max-content;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-item{font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;color:white;font-weight:600;padding:0 3rem;}
+.ticker-item::after{content:'·';margin-left:3rem;color:rgba(255,255,255,0.4);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1200px;margin:0 auto;}
+.photo-stack{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.photo-stack img{width:100%;height:200px;object-fit:cover;display:block;}
+.photo-stack img.tall{grid-column:1/-1;height:220px;}
+/* placeholder shown when image missing */
+.ph-wrap{position:relative;background:#2a3a2a;}
+.ph-wrap img{display:block;width:100%;height:100%;object-fit:cover;}
+.ph-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;opacity:0;}
+.ph-wrap img[data-src],.ph-wrap img:not([src]){opacity:0;}
+.zones{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:1100px;margin:2rem auto 0;}
+.zone{padding:2.5rem;}
+.zone.pub{background:white;}
+.zone.priv{background:var(--sky-dark);}
+.zone-badge{display:inline-block;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.28rem 0.7rem;margin-bottom:1.2rem;font-weight:600;border-radius:1px;}
+.zone.pub .zone-badge{background:var(--pasture);color:white;}
+.zone.priv .zone-badge{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);}
+.zone h3{font-family:'Dancing Script',cursive;font-size:1.5rem;margin-bottom:0.5rem;}
+.zone.pub h3{color:var(--sky-dark);}
+.zone.priv h3{color:white;}
+.zone-desc{font-size:0.84rem;line-height:1.6;margin-bottom:1.4rem;font-weight:300;}
+.zone.pub .zone-desc{color:var(--text-mid);}
+.zone.priv .zone-desc{color:rgba(255,255,255,0.6);}
+.page-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.page-list li{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;}
+.page-list li::before{content:'';display:block;width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.zone.pub .page-list li{color:var(--text-mid);}
+.zone.pub .page-list li::before{background:var(--pasture);}
+.zone.priv .page-list li{color:rgba(255,255,255,0.75);}
+.zone.priv .page-list li::before{background:rgba(255,255,255,0.3);}
+.page-list a{color:inherit;text-decoration:none;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.val-card{background:white;border-top:3px solid var(--pasture);padding:1.8rem;}
+.val-card h3{font-family:'Dancing Script',cursive;font-size:1.3rem;color:var(--sky-dark);margin-bottom:0.5rem;}
+.val-card p{font-size:0.82rem;color:var(--text-light);line-height:1.65;font-weight:300;}
+footer{background:#111e2e;padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--pasture);}
+footer .logo{font-family:'Dancing Script',cursive;font-size:1.3rem;color:white;}
+footer .logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:300;margin-top:2px;}
+footer p{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-mobile.open{display:block;}
+  .hero-content{padding:0 1.5rem 2.5rem;max-width:100%;}
+  .hero-identity{display:none;}
+  .stats-strip{grid-template-columns:1fr 1fr;}
+  .stat{padding:1.2rem 1rem;}
+  .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .photo-stack{grid-template-columns:1fr;}
+  .photo-stack img.tall{height:200px;}
+  .zones{grid-template-columns:1fr;}
+  .values-grid{grid-template-columns:1fr;}
+  .section{padding:3rem 1.5rem;}
+  footer{flex-direction:column;gap:1rem;padding:2rem 1.5rem;text-align:center;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem;}
+  .stats-strip{grid-template-columns:1fr 1fr;}
+  .stat{padding:1rem 0.8rem;}
+  .stat-num{font-size:1.6rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ✏️ NAV — do not edit structure -->
+<nav>
+  <a href="/index.html" class="nav-logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · Tairāwhiti</span></a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/farm.html">The Farm</a></li>
+    <li><a href="/people.html">Our People</a></li>
+    <li><a href="/education.html">Education</a></li>
+    <li><a href="/news.html">News</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="#portal" class="nav-portal" style="opacity:0.6;cursor:default;" title="Coming soon">Portal — Coming Soon</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="/about.html">About</a>
+  <a href="/farm.html">The Farm</a>
+  <a href="/people.html">Our People</a>
+  <a href="/education.html">Education</a>
+  <a href="/news.html">News</a>
+  <a href="/contact.html">Contact</a>
+  <a href="#portal" class="mob-portal" style="opacity:0.6;">Shareholder Portal — Coming Soon</a>
+</div>
+
+<!-- ✏️ Pepeha ticker — edit lines between span tags -->
+<div class="ticker" style="margin-top:64px;">
+  <div class="ticker-inner">
+    <span class="ticker-item">Ko Hikurangi ō mātou maunga</span>
+    <span class="ticker-item">Ko Waiapu, ko Mangaoparo ō mātou awa</span>
+    <span class="ticker-item">Ko Horouta ō mātou waka</span>
+    <span class="ticker-item">Ko Ngāti Rangi ō mātou hapū · Ko Ngāti Porou ō mātou iwi</span>
+    <span class="ticker-item">Ko Tutumatai ō mātou whenua</span>
+    <span class="ticker-item">Ko Raana Te Iti Walker rāua ko Mere Roa Milner ō mātou tūpuna i heke mai ki tēnei whenua</span>
+    <span class="ticker-item">Mō ngā uri whakatipu — for the generations yet to come</span>
+    <span class="ticker-item">Ko Hikurangi ō mātou maunga</span>
+    <span class="ticker-item">Ko Waiapu, ko Mangaoparo ō mātou awa</span>
+    <span class="ticker-item">Ko Horouta ō mātou waka</span>
+    <span class="ticker-item">Ko Ngāti Rangi ō mātou hapū · Ko Ngāti Porou ō mātou iwi</span>
+    <span class="ticker-item">Ko Tutumatai ō mātou whenua</span>
+    <span class="ticker-item">Ko Raana Te Iti Walker rāua ko Mere Roa Milner ō mātou tūpuna i heke mai ki tēnei whenua</span>
+    <span class="ticker-item">Mō ngā uri whakatipu — for the generations yet to come</span>
+  </div>
+</div>
+
+<!-- ✏️ Hero photo: change home-hero.jpg to swap -->
+<section class="hero" style="height:90vh;">
+  <div class="hero-img" style="background-image:url('/images/home-hero.jpg');"></div>
+  <div class="hero-identity">
+    <div class="sname">Tutumatai Station</div>
+    <div class="ssub">Rotokautuku X1C Incorporation</div>
+    <div class="saddr">307 Mangaoporo Road, RD 3, Ruatoria</div>
+  </div>
+  <div class="hero-content">
+    <div class="eyebrow">Ngāti Porou · Tairāwhiti · Aotearoa</div>
+    <h1>Ko Tutumatai<br>tō mātou whenua</h1>
+    <p class="hero-sub">Rotokautuku X1C Incorporation — guardians of 1,428 hectares of whenua on the East Coast, farming for generations past and yet to come.</p>
+    <div class="ctas">
+      <a href="/about.html" class="btn-p">Our Story</a>
+      <a href="#portal" class="btn-g" style="opacity:0.6;cursor:default;" title="Coming soon">Shareholder Portal — Coming Soon</a>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ Stats — change numbers and labels -->
+<div class="stats-strip">
+  <div class="stat"><div class="stat-num">1,428 ha</div><div class="stat-label">Of ancestral whenua</div></div>
+  <div class="stat"><div class="stat-num">836 ha</div><div class="stat-label">Effective farming area</div></div>
+  <div class="stat"><div class="stat-num">78</div><div class="stat-label">Shareholders &amp; their whānau</div></div>
+  <div class="stat"><div class="stat-num">106+</div><div class="stat-label">Paddocks across the station</div></div>
+</div>
+
+<!-- ✏️ About section text -->
+<section class="section" style="padding:5rem 4rem;">
+  <div class="about-grid">
+    <div>
+      <div class="sec-label">Who we are</div>
+      <h2>A sacred thread connecting us to the land</h2>
+      <p class="body-p">The hill that rises 473 metres behind the homestead has carried the name Tutumatai since it was given by our tūpuna Uepōhatu as a sentinel over the lands that came under his mana. Beside it stands Tutukura, its companion sentinel. These are not just farm features. They are named by tūpuna.</p>
+      <p class="body-p">On this whenua sits the urupā of Umuariki — grandson of Uepōhatu, grandfather of Ngakonui — whose pā occupied this very ground and whose name our urupā carries. We are Ngāti Rangi, and our tūpuna rest here.</p>
+      <p class="body-p">Tutumatai Station is operated by Rotokautuku X1C Incorporation, governed by elected directors on behalf of 78 shareholders and their whānau. We farm this land. We protect it. And we will return it to those who come after us in better shape than we found it.</p>
+    </div>
+    <!-- ✏️ Home about photos: home-1.jpg (tall), home-2.jpg (bottom left), home-3.jpg (bottom right) -->
+    <div class="photo-stack">
+      <img src="/images/home-3.jpg" alt="Station landscape" class="tall"
+           onerror="this.outerHTML='<div class=\'ph-wrap tall\' style=\'height:220px;grid-column:1/-1;background:#2a3a2a;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:monospace;font-size:0.65rem;color:rgba(255,255,255,0.5);padding:0.3rem 0.6rem;background:rgba(0,0,0,0.4);border-radius:2px;\'>home-3.jpg</span></div>'">
+      <img src="/images/home-2.jpg" alt="Cattle on the station"
+           onerror="this.outerHTML='<div style=\'height:200px;background:#2a3a2a;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:monospace;font-size:0.65rem;color:rgba(255,255,255,0.5);padding:0.3rem 0.6rem;background:rgba(0,0,0,0.4);border-radius:2px;\'>home-2.jpg</span></div>'">
+      <img src="/images/home-1.jpg" alt="Cattle at dusk"
+           onerror="this.outerHTML='<div style=\'height:200px;background:#2a3a2a;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:monospace;font-size:0.65rem;color:rgba(255,255,255,0.5);padding:0.3rem 0.6rem;background:rgba(0,0,0,0.4);border-radius:2px;\'>home-1.jpg</span></div>'">
+    </div>
+  </div>
+</section>
+
+<section class="section sky">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="sec-label" style="justify-content:center;">Explore the site</div>
+    <h2>Two zones, one platform</h2>
+    <p style="color:var(--text-mid);font-size:0.88rem;font-weight:300;">Public-facing story and private shareholder portal — unified under tutumataistation.nz</p>
+  </div>
+  <div class="zones">
+    <div class="zone pub">
+      <span class="zone-badge">Public — no login required</span>
+      <h3>Public Website</h3>
+      <p class="zone-desc">Our story, our farm, our people, and how to get involved.</p>
+      <ul class="page-list">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/farm.html">The Farm</a></li>
+        <li><a href="/people.html">Our People</a></li>
+        <li><a href="/education.html">Education</a></li>
+        <li><a href="/news.html">News &amp; Updates</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="zone priv">
+      <span class="zone-badge">Private — login required</span>
+      <h3>Shareholder Portal</h3>
+      <p class="zone-desc">Governance documents, financials, AGM materials and grant records for shareholders and COM.</p>
+      <ul class="page-list">
+        <li>Governance — minutes, resolutions, reports</li>
+        <li>Financials — accounts, audit reports</li>
+        <li>Farm Operations — stock reports</li>
+        <li>AGM Hub — notices, agendas, proxy</li>
+        <li>Education Grants — applications, decisions</li>
+        <li>COM Only — board papers (restricted)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section cream">
+  <div class="inner">
+    <div class="sec-label">Our values</div>
+    <h2>What guides us</h2>
+    <div class="values-grid">
+      <div class="val-card"><h3>Integrity</h3><p>Our moral compass — guiding us to make ethical choices that uphold the trust placed in us by our shareholders, our community, and the land itself.</p></div>
+      <div class="val-card"><h3>Honesty</h3><p>The cornerstone of our relationships. Trust is built and maintained through open, transparent communication with our shareholders and whānau.</p></div>
+      <div class="val-card"><h3>Kaitiakitanga</h3><p>Mō ngā uri whakatipu. We are caretakers of the land for future generations — committed to leaving it in better shape than we found it.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · 307 Mangaoporo Road, RD 3, Ruatoria · Tairāwhiti</span></div>
+  <p>tutumataistation.nz — Home</p>
+</footer>
+
+<script>
+const btn = document.getElementById('hamburger');
+const mob = document.getElementById('mobileNav');
+btn.addEventListener('click', () => mob.classList.toggle('open'));
+document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+</script>
+</body>
+</html>

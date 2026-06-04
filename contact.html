@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact — Tutumatai Station</title>
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#2d5a96;--sky-dark:#1e3d6b;--pasture:#4a6828;--pasture-mid:#384f1e;--pasture-light:#607040;--off-white:#f4f7f0;--light-sky:#e8f0f8;--cream:#faf8f2;--text:#1a2a1a;--text-mid:#3a4a3a;--text-light:#5a6a5a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(30,61,107,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.1);}
+.nav-logo{font-family:'Dancing Script',cursive;font-size:1.5rem;color:white;line-height:1;text-decoration:none;}
+.nav-logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:300;margin-top:2px;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:white;}
+.nav-portal{background:var(--pasture)!important;color:white!important;padding:0.4rem 1rem;border-radius:2px;font-weight:600!important;}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:white;border-radius:1px;}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(30,61,107,0.98);z-index:99;padding:1rem 0;border-bottom:2px solid var(--pasture);}
+.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.8rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-mobile a:hover{color:white;background:rgba(255,255,255,0.05);}
+.nav-mobile .mob-portal{background:var(--pasture);color:white!important;margin:0.8rem 2rem 0;padding:0.7rem 1rem;text-align:center;display:block;}
+.hero{margin-top:64px;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center center;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.45) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 4rem 3rem;}
+.eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.7rem;font-weight:300;}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
+.hero h1{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,5vw,4.2rem);color:white;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:0.5rem;}
+.hero-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:500px;line-height:1.6;}
+.section{padding:4.5rem 4rem;}
+.section.cream{background:var(--cream);}
+.inner{max-width:1200px;margin:0 auto;}
+.sec-label{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--pasture);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;font-weight:600;}
+.sec-label::before{content:'';display:block;width:18px;height:2px;background:var(--pasture);}
+h2{font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--sky-dark);line-height:1.2;margin-bottom:0.8rem;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1000px;margin:2rem auto 0;align-items:start;}
+.contact-block{margin-bottom:1.8rem;}
+.contact-block h4{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pasture);font-weight:600;margin-bottom:0.5rem;}
+.contact-block p{font-size:0.9rem;color:var(--text-mid);font-weight:300;line-height:1.6;}
+.contact-block a{color:var(--sky);text-decoration:none;}
+.map-ph{width:100%;height:280px;background:linear-gradient(135deg,#e8f0f8,#d0e4f0);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;border:1px solid rgba(45,90,150,0.15);}
+.contact-form{background:white;padding:2rem;}
+.form-row{margin-bottom:1.2rem;}
+.form-row label{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);font-weight:600;margin-bottom:0.4rem;}
+.form-row input,.form-row textarea,.form-row select{width:100%;padding:0.7rem 0.9rem;border:1px solid rgba(74,104,40,0.25);font-family:'Source Sans 3',sans-serif;font-size:0.88rem;color:var(--text);background:var(--off-white);font-weight:300;}
+.form-row textarea{height:120px;resize:vertical;}
+.form-submit{background:var(--pasture);color:white;border:none;padding:0.85rem 2rem;font-family:'Source Sans 3',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;width:100%;}
+.portal-cta{background:var(--sky-dark);padding:3rem 4rem;text-align:center;}
+.portal-cta h3{font-family:'Dancing Script',cursive;font-size:1.8rem;color:white;margin-bottom:0.6rem;}
+.portal-cta p{color:rgba(255,255,255,0.65);font-size:0.88rem;max-width:500px;margin:0 auto 1.5rem;font-weight:300;line-height:1.6;}
+.portal-btn{display:inline-block;background:var(--pasture);color:white;padding:0.8rem 1.8rem;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;}
+footer{background:#111e2e;padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--pasture);}
+footer .logo{font-family:'Dancing Script',cursive;font-size:1.3rem;color:white;}
+footer .logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:300;margin-top:2px;}
+footer p{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-mobile.open{display:block;}
+  .hero-content{padding:0 1.5rem 2rem;}
+  .section{padding:3rem 1.5rem;}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .portal-cta{padding:2.5rem 1.5rem;}
+  footer{flex-direction:column;gap:1rem;padding:2rem 1.5rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · Tairāwhiti</span></a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/farm.html">The Farm</a></li>
+    <li><a href="/people.html">Our People</a></li>
+    <li><a href="/education.html">Education</a></li>
+    <li><a href="/news.html">News</a></li>
+    <li><a href="/contact.html" class="active">Contact</a></li>
+    <li><a href="#portal" class="nav-portal" style="opacity:0.6;cursor:default;" title="Coming soon">Portal — Coming Soon</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="/about.html">About</a>
+  <a href="/farm.html">The Farm</a>
+  <a href="/people.html">Our People</a>
+  <a href="/education.html">Education</a>
+  <a href="/news.html">News</a>
+  <a href="/contact.html" class="active">Contact</a>
+  <a href="#portal" class="mob-portal" style="opacity:0.6;">Shareholder Portal — Coming Soon</a>
+</div>
+
+<!-- ✏️ Hero photo: contact-hero.jpg (Walker Rd sign) -->
+<section class="hero" style="height:55vh;">
+  <div class="hero-img" style="background-image:url('/images/contact-hero.jpg');background-position:center 40%;"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Get in touch · Shareholder enquiries · Farm</div>
+    <h1>Contact Us</h1>
+    <p class="hero-sub">Reach the Committee of Management, ask about shareholding, or get in touch about the station.</p>
+  </div>
+</section>
+
+<section class="section cream">
+  <div class="inner">
+    <div class="contact-grid">
+      <div>
+        <div class="sec-label">Get in touch</div>
+        <h2>We'd love to hear from you</h2>
+        <!-- ✏️ Update contact details below -->
+        <div class="contact-block">
+          <h4>Physical address</h4>
+          <p>Tutumatai Station<br>307 Mangaoporo Road, RD 3<br>Ruatoria, Tairāwhiti 4082</p>
+        </div>
+        <div class="contact-block">
+          <h4>Postal address</h4>
+          <p>The Committee of Management<br>Rotokautuku X1C Incorporation<br>[Postal address — to be confirmed]</p>
+        </div>
+        <div class="contact-block">
+          <h4>Email</h4>
+          <p><a href="mailto:info@tutumataistation.nz">info@tutumataistation.nz</a></p>
+        </div>
+        <div class="contact-block">
+          <h4>Chairperson</h4>
+          <p>Audine Grace-Kutia<br><a href="mailto:chair@tutumataistation.nz">chair@tutumataistation.nz</a></p>
+        </div>
+        <div class="map-ph">
+          <p style="font-size:1.5rem;">📍</p>
+          <p style="font-size:0.8rem;color:var(--text-light);text-align:center;font-weight:300;">Mangaoporo Road, Ruatoria · Tairāwhiti<br><span style="font-size:0.7rem;opacity:0.6;">Interactive map coming soon</span></p>
+        </div>
+      </div>
+      <div>
+        <div class="sec-label">Send a message</div>
+        <h2>Enquiry form</h2>
+        <!-- ✏️ Add/edit enquiry types in the select options -->
+        <div class="contact-form">
+          <div class="form-row"><label>Your name</label><input type="text" placeholder="Full name"></div>
+          <div class="form-row"><label>Email address</label><input type="email" placeholder="your@email.com"></div>
+          <div class="form-row">
+            <label>Enquiry type</label>
+            <select>
+              <option>General enquiry</option>
+              <option>Shareholder enquiry</option>
+              <option>Education grant</option>
+              <option>AGM / governance</option>
+              <option>Farm operations</option>
+              <option>Media</option>
+            </select>
+          </div>
+          <div class="form-row"><label>Message</label><textarea placeholder="How can we help?"></textarea></div>
+          <button class="form-submit" disabled style="opacity:0.5;cursor:not-allowed;">Online Form Coming Soon</button>
+          <p style="font-size:0.72rem;color:var(--text-light);margin-top:0.8rem;text-align:center;font-weight:300;">In the meantime please email <a href="mailto:info@tutumataistation.nz">info@tutumataistation.nz</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="portal-cta">
+  <h3>Shareholder Portal</h3>
+  <p>Shareholders can access governance documents, financial reports, AGM materials, and grant information through the secure portal.</p>
+  <a href="#portal" class="portal-btn" style="opacity:0.6;cursor:default;" title="Coming soon">Coming Soon</a>
+</div>
+
+<footer>
+  <div class="logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · 307 Mangaoporo Road, RD 3, Ruatoria · Tairāwhiti</span></div>
+  <p>tutumataistation.nz — Contact</p>
+</footer>
+
+<script>
+const btn = document.getElementById('hamburger');
+const mob = document.getElementById('mobileNav');
+btn.addEventListener('click', () => mob.classList.toggle('open'));
+document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+</script>
+</body>
+</html>
