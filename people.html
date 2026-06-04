@@ -5,24 +5,8 @@
 <title>Our People — Tutumatai Station</title>
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 <style>
-:root{--sky:#2d5a96;--sky-dark:#1e3d6b;--pasture:#4a6828;--pasture-mid:#384f1e;--pasture-light:#607040;--off-white:#f4f7f0;--light-sky:#e8f0f8;--cream:#faf8f2;--text:#1a2a1a;--text-mid:#3a4a3a;--text-light:#5a6a5a;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Source Sans 3',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(30,61,107,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.1);}
-.nav-logo{font-family:'Dancing Script',cursive;font-size:1.5rem;color:white;line-height:1;text-decoration:none;}
-.nav-logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:300;margin-top:2px;}
-.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover,.nav-links a.active{color:white;}
-.nav-portal{background:var(--pasture)!important;color:white!important;padding:0.4rem 1rem;border-radius:2px;font-weight:600!important;}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:white;border-radius:1px;}
-.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(30,61,107,0.98);z-index:99;padding:1rem 0;border-bottom:2px solid var(--pasture);}
-.nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.8rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
-.nav-mobile a:hover{color:white;background:rgba(255,255,255,0.05);}
-.nav-mobile .mob-portal{background:var(--pasture);color:white!important;margin:0.8rem 2rem 0;padding:0.7rem 1rem;text-align:center;display:block;}
-/* hero for people uses full img tag not background — kept from original */
 .people-hero{margin-top:64px;position:relative;overflow:hidden;}
 .people-hero img{width:100%;display:block;max-height:420px;object-fit:cover;object-position:center center;}
 .people-hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(20,40,20,0.75),transparent);padding:2rem 4rem 2.5rem;}
@@ -30,22 +14,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .people-hero-overlay .eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
 .people-hero-overlay h1{font-family:'Dancing Script',cursive;font-size:clamp(2rem,4vw,3.5rem);color:white;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:0.4rem;}
 .people-hero-overlay .hero-sub{color:rgba(255,255,255,0.78);font-size:0.9rem;font-weight:300;max-width:500px;line-height:1.5;}
-/* placeholder for hero when missing */
 .people-hero-ph{width:100%;height:320px;background:#2a3a2a;display:flex;align-items:center;justify-content:center;}
 .people-hero-ph span{font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.4);padding:0.3rem 0.7rem;border-radius:2px;}
-.section{padding:4.5rem 4rem;}
-.section.cream{background:var(--cream);}
 .section.sky{background:var(--light-sky);}
 .section.dark{background:var(--sky-dark);}
-.inner{max-width:1200px;margin:0 auto;}
-.sec-label{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--pasture);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;font-weight:600;}
-.sec-label::before{content:'';display:block;width:18px;height:2px;background:var(--pasture);}
 .sec-label.light{color:rgba(150,200,100,0.8);}
 .sec-label.light::before{background:rgba(150,200,100,0.8);}
-h2{font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--sky-dark);line-height:1.2;margin-bottom:0.8rem;}
 h2.light{color:white;}
 .lead{color:var(--text-mid);font-size:0.96rem;line-height:1.85;font-weight:300;max-width:700px;margin-bottom:1rem;}
-/* COM cards */
 .com-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
 .person-card{background:white;border-top:3px solid var(--pasture);overflow:hidden;}
 .person-photo{width:100%;height:160px;object-fit:cover;object-position:center 20%;display:block;}
@@ -56,7 +32,6 @@ h2.light{color:white;}
 .person-role{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--pasture);font-weight:600;margin-bottom:0.4rem;}
 .person-note{font-size:0.72rem;color:var(--text-light);font-weight:300;line-height:1.4;}
 .person-tenure{font-size:0.68rem;color:rgba(90,106,90,0.55);margin-top:0.3rem;font-style:italic;}
-/* Staff cards */
 .staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
 .staff-card{background:white;padding:1.2rem;border-left:3px solid var(--sky);}
 .staff-photo{width:100%;height:140px;object-fit:cover;object-position:center 20%;display:block;margin-bottom:0.8rem;}
@@ -65,22 +40,16 @@ h2.light{color:white;}
 .staff-card h4{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--sky-dark);margin-bottom:0.1rem;}
 .staff-card .role{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.4rem;}
 .staff-card p{font-size:0.76rem;color:var(--text-light);font-weight:300;line-height:1.5;}
-/* Past table */
 .past-wrap{max-height:380px;overflow-y:auto;margin-top:1.2rem;border:1px solid rgba(74,104,40,0.12);}
 .past-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
 .past-table th{text-align:left;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);font-weight:600;padding:0.6rem 0.8rem;border-bottom:2px solid rgba(74,104,40,0.2);background:white;position:sticky;top:0;}
 .past-table td{padding:0.65rem 0.8rem;border-bottom:1px solid rgba(74,104,40,0.08);color:var(--text-mid);font-weight:300;font-size:0.8rem;}
 .past-table tr:last-child td{border-bottom:none;}
-/* Advisors */
 .advisor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
 .advisor-card{border:1px solid rgba(255,255,255,0.1);padding:1.4rem;}
 .advisor-tag{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pasture-light);margin-bottom:0.4rem;font-weight:600;}
 .advisor-name{font-family:'Dancing Script',cursive;font-size:1.1rem;color:white;margin-bottom:0.2rem;}
 .advisor-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);font-weight:300;}
-footer{background:#111e2e;padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--pasture);}
-footer .logo{font-family:'Dancing Script',cursive;font-size:1.3rem;color:white;}
-footer .logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:300;margin-top:2px;}
-footer p{font-size:0.72rem;color:rgba(255,255,255,0.25);}
 @media(max-width:900px){.com-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:768px){
   nav{padding:0 1.2rem;}
