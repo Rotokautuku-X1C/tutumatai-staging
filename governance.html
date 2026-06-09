@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Governance — Tutumatai Station</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.gov-header{margin-top:64px;background:var(--sky-dark);color:white;padding:3.5rem 4rem;}
+.gov-header .eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.6rem;font-weight:300;}
+.gov-header h1{font-family:'Dancing Script',cursive;font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;margin-bottom:0.5rem;}
+.gov-header p{color:rgba(255,255,255,0.78);font-size:0.92rem;font-weight:300;max-width:620px;line-height:1.6;}
+.section.sky{background:var(--light-sky);}
+.section.dark{background:var(--sky-dark);}
+.sec-label.light{color:rgba(150,200,100,0.8);}
+.sec-label.light::before{background:rgba(150,200,100,0.8);}
+h2.light{color:white;}
+.lead{color:var(--text-mid);font-size:0.96rem;line-height:1.85;font-weight:300;max-width:700px;margin-bottom:1rem;}
+.gov-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0.8rem;margin-top:1.6rem;}
+.gov-item{background:white;border-top:3px solid var(--pasture);padding:1rem 0.9rem;}
+.gov-item h4{font-size:0.82rem;color:var(--sky-dark);margin-bottom:0.4rem;line-height:1.25;}
+.gov-item p{font-size:0.72rem;color:var(--text-light);font-weight:300;line-height:1.5;}
+.com-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
+.person-card{background:white;border-top:3px solid var(--pasture);overflow:hidden;}
+.person-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;}
+.person-photo-ph{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,#2a3a2a,#1a2a1a);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.person-photo-ph span{font-family:monospace;font-size:0.58rem;color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.4);padding:0.15rem 0.4rem;border-radius:2px;text-align:center;max-width:90%;word-break:break-all;}
+.person-body{padding:0.9rem;}
+.person-name{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--sky-dark);margin-bottom:0.1rem;line-height:1.2;}
+.person-role{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--pasture);font-weight:600;margin-bottom:0.4rem;}
+.person-tenure{font-size:0.68rem;color:rgba(90,106,90,0.55);margin-top:0.3rem;font-style:italic;}
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
+.staff-card{background:white;padding:1.2rem;border-left:3px solid var(--sky);}
+.staff-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;margin-bottom:0.8rem;}
+.staff-photo-ph{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,#1e3d6b,#2d5a96);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;margin-bottom:0.8rem;}
+.staff-photo-ph span{font-family:monospace;font-size:0.58rem;color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.4);padding:0.15rem 0.4rem;border-radius:2px;text-align:center;max-width:90%;word-break:break-all;}
+.staff-card h4{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--sky-dark);margin-bottom:0.1rem;}
+.staff-card .role{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.4rem;}
+.staff-card p{font-size:0.76rem;color:var(--text-light);font-weight:300;line-height:1.5;}
+.advisor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;max-width:640px;}
+.advisor-card{border:1px solid rgba(255,255,255,0.1);padding:1.4rem;}
+.advisor-tag{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pasture-light);margin-bottom:0.4rem;font-weight:600;}
+.advisor-name{font-family:'Dancing Script',cursive;font-size:1.1rem;color:white;margin-bottom:0.2rem;}
+.advisor-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);font-weight:300;}
+.past-wrap{max-height:380px;overflow-y:auto;margin-top:1.2rem;border:1px solid rgba(74,104,40,0.12);}
+.past-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
+.past-table th{text-align:left;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);font-weight:600;padding:0.6rem 0.8rem;border-bottom:2px solid rgba(74,104,40,0.2);background:white;position:sticky;top:0;}
+.past-table td{padding:0.65rem 0.8rem;border-bottom:1px solid rgba(74,104,40,0.08);color:var(--text-mid);font-weight:300;font-size:0.8rem;}
+.past-table tr:last-child td{border-bottom:none;}
+@media(max-width:900px){.gov-grid{grid-template-columns:repeat(3,1fr);}.com-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-mobile.open{display:block;}
+  .gov-header{padding:2.5rem 1.5rem;}
+  .section{padding:3rem 1.5rem;}
+  .gov-grid{grid-template-columns:repeat(2,1fr);}
+  .com-grid{grid-template-columns:repeat(2,1fr);}
+  .staff-grid{grid-template-columns:1fr 1fr;}
+  .advisor-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:1rem;padding:2rem 1.5rem;text-align:center;}
+}
+@media(max-width:480px){.gov-grid{grid-template-columns:1fr 1fr;}.com-grid{grid-template-columns:1fr 1fr;}.staff-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- ✏️ NAV — do not edit structure -->
+<nav>
+  <a href="/index.html" class="nav-logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · Tairāwhiti</span></a>
+  <ul class="nav-links">
+    <li><a href="/about.html">Our Tipuna</a></li>
+    <li><a href="/governance.html" class="active">Governance</a></li>
+    <li><a href="/people.html">Our People</a></li>
+    <li><a href="/education.html">Education</a></li>
+    <li><a href="/news.html">News</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="/about.html">Our Tipuna</a>
+  <a href="/governance.html" class="active">Governance</a>
+  <a href="/people.html">Our People</a>
+  <a href="/education.html">Education</a>
+  <a href="/news.html">News</a>
+  <a href="/contact.html">Contact</a>
+</div>
+
+<div class="gov-header">
+  <div class="eyebrow">Rotokautuku X1C Incorporation</div>
+  <h1>Governance</h1>
+  <p>How the Incorporation is governed, who serves on the Committee of Management and farm team, and the partners and programmes that support our shareholders.</p>
+</div>
+
+<!-- ✏️ HOW WE ARE GOVERNED (one row) -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-label">How we govern ourselves</div>
+    <h2>How we are governed</h2>
+    <p class="lead">Rotokautuku X1C Incorporation is governed under Te Ture Whenua Māori Act by an elected Committee of Management accountable to 78 shareholders.</p>
+    <div class="gov-grid">
+      <div class="gov-item"><h4>Committee of Management</h4><p>An elected board of directors responsible for all governance decisions — strategy, finances, operations, and shareholder relations.</p></div>
+      <div class="gov-item"><h4>78 Shareholders</h4><p>All descendants of Raana and Mere Roa Walker. Shareholders vote at AGMs, receive annual reports, and may apply for education grants.</p></div>
+      <div class="gov-item"><h4>Annual General Meeting</h4><p>Held annually and open to all shareholders — the primary forum for reporting on the year's performance and electing directors.</p></div>
+      <div class="gov-item"><h4>Independent Audit</h4><p>Financial statements are independently audited by Coates Associates Ltd (Mitchell McFarlane), Gisborne, and presented to shareholders annually.</p></div>
+      <div class="gov-item"><h4>Farm Management</h4><p>Day-to-day farming operations are managed by a professional Farm Manager supported by a shepherd, with oversight from the COM.</p></div>
+      <div class="gov-item"><h4>Te Ture Whenua Māori Act</h4><p>The Incorporation operates under this Act, which protects Māori land from alienation and keeps it with its owners and descendants.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ COM CARDS — to update a photo, upload people-1.jpg … people-7.jpg to images/ -->
+<section class="section cream">
+  <div class="inner">
+    <div class="sec-label">Committee of Management</div>
+    <h2>Current Members</h2>
+    <p class="lead">The Committee of Management is elected by shareholders at the Annual General Meeting. Members serve fixed terms and are accountable to all shareholders of the Incorporation.</p>
+    <div class="com-grid">
+      <div class="person-card">
+        <img src="/images/people-1.jpg" class="person-photo" alt="Audine Grace-Kutia"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-1.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Audine Grace-Kutia</div>
+          <div class="person-role">Chairperson</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="/images/people-2.jpg" class="person-photo" alt="Raana Walker"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-2.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Raana Walker</div>
+          <div class="person-role">Finance Portfolio</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="/images/people-3.jpg" class="person-photo" alt="Eruera Kawhia"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-3.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Eruera Kawhia</div>
+          <div class="person-role">Member</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="/images/people-4.jpg" class="person-photo" alt="Toni Walker"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-4.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Toni Walker</div>
+          <div class="person-role">Member</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="/images/people-5.jpg" class="person-photo" alt="Adrianne Olsen-Hovell"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-5.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Adrianne Olsen-Hovell</div>
+          <div class="person-role">Member</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="/images/people-6.jpg" class="person-photo" alt="Ngarangi Walker"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-6.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Ngarangi Walker</div>
+          <div class="person-role">Member</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+      <div class="person-card">
+        <img src="/images/people-7.jpg" class="person-photo" alt="James Milner"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>people-7.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">James Milner</div>
+          <div class="person-role">Member</div>
+          <div class="person-tenure">Elected: [Month Year]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ FARM TEAM -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-label">Farm team</div>
+    <h2>The people on the ground</h2>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <img src="/images/staff-1.jpg" class="staff-photo" alt="Shane Sergent"
+             onerror="this.outerHTML='<div class=\'staff-photo-ph\'><span>staff-1.jpg</span></div>'">
+        <h4>Shane Sergent</h4>
+        <div class="role">Farm Manager</div>
+        <p>Managing day-to-day sheep and beef operations across Tutumatai's 836 ha effective area.</p>
+      </div>
+      <div class="staff-card">
+        <img src="/images/staff-2.jpg" class="staff-photo" alt="Shepherd"
+             onerror="this.outerHTML='<div class=\'staff-photo-ph\'><span>staff-2.jpg</span></div>'">
+        <h4>[Shepherd name]</h4>
+        <div class="role">Shepherd</div>
+        <p>Supporting all on-farm livestock operations including mustering, drenching, and daily stock welfare checks.</p>
+      </div>
+      <div class="staff-card">
+        <img src="/images/staff-3.jpg" class="staff-photo" alt="Katarina Haerewa"
+             onerror="this.outerHTML='<div class=\'staff-photo-ph\'><span>staff-3.jpg</span></div>'">
+        <h4>Katarina Haerewa</h4>
+        <div class="role">Bookkeeper</div>
+        <p>Managing day-to-day financial records in partnership with Blakeman &amp; Co.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ TRUSTED PARTNERS -->
+<section class="section dark">
+  <div class="inner">
+    <div class="sec-label light">Professional advisors</div>
+    <h2 class="light">Our trusted partners</h2>
+    <div class="advisor-grid">
+      <div class="advisor-card"><div class="advisor-tag">Audit</div><div class="advisor-name">Coates Associates Ltd</div><div class="advisor-sub">Mitchell McFarlane · Gisborne</div></div>
+      <div class="advisor-card"><div class="advisor-tag">Accounts</div><div class="advisor-name">Blakeman &amp; Co</div><div class="advisor-sub">Debbie Blakeman · Gisborne</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ✏️ PAST MEMBERS — fill in names and dates -->
+<section class="section">
+  <div class="inner">
+    <div class="sec-label">Serving the Incorporation</div>
+    <h2 style="font-size:1.6rem;">Past Committee Members</h2>
+    <p style="font-size:0.85rem;color:var(--text-light);font-weight:300;margin-bottom:0.5rem;">Fill in names and dates below. Scroll to see all rows.</p>
+    <div class="past-wrap">
+      <table class="past-table">
+        <thead>
+          <tr><th>Name</th><th>Role</th><th>Elected</th><th>Resigned</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>[Name]</td><td>[Role]</td><td>[Month/Year]</td><td>[Month/Year]</td><td></td></tr>
+          <tr><td>[Name]</td><td>[Role]</td><td>[Month/Year]</td><td>[Month/Year]</td><td></td></tr>
+          <tr><td>[Name]</td><td>[Role]</td><td>[Month/Year]</td><td>[Month/Year]</td><td></td></tr>
+          <tr><td>[Name]</td><td>[Role]</td><td>[Month/Year]</td><td>[Month/Year]</td><td></td></tr>
+          <tr><td>[Name]</td><td>[Role]</td><td>[Month/Year]</td><td>[Month/Year]</td><td></td></tr>
+          <tr><td>[Name]</td><td>[Role]</td><td>[Month/Year]</td><td>[Month/Year]</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · 307 Mangaoporo Road, RD 3, Ruatoria · Tairāwhiti</span></div>
+  <p>tutumataistation.nz — Governance</p>
+</footer>
+
+<script>
+const btn = document.getElementById('hamburger');
+const mob = document.getElementById('mobileNav');
+btn.addEventListener('click', () => mob.classList.toggle('open'));
+document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+</script>
+</body>
+</html>

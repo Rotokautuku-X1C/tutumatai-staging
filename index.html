@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Tutumatai Station — Rotokautuku X1C Incorporation</title>
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
@@ -92,6 +94,18 @@
   .stat{padding:1rem 0.8rem;}
   .stat-num{font-size:1.6rem;}
 }
+.val-reo{font-family:'Dancing Script',cursive;color:var(--pasture);font-size:1.05rem;margin:-0.4rem 0 0.5rem;letter-spacing:0.02em;}
+.vision-band{background:var(--pasture-mid);padding:3rem 4rem;display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:center;border-top:3px solid var(--pasture-light);}
+.vision-te-reo{font-family:'Dancing Script',cursive;font-size:1.5rem;color:rgba(255,255,255,0.85);line-height:1.3;font-style:italic;}
+.vision-translation{color:rgba(255,255,255,0.55);font-size:0.78rem;line-height:1.6;font-weight:300;margin-top:0.4rem;}
+.vision-body{color:rgba(255,255,255,0.8);font-size:0.95rem;line-height:1.8;font-weight:300;border-left:2px solid rgba(255,255,255,0.2);padding-left:2rem;}
+.land-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(74,104,40,0.12);border:1px solid rgba(74,104,40,0.12);max-width:1200px;margin:2rem auto 0;}
+.land-block{background:white;padding:1.6rem;}
+.land-block-num{font-family:'Dancing Script',cursive;font-size:2.2rem;color:var(--pasture);line-height:1;margin-bottom:0.2rem;}
+.land-block-label{font-size:0.8rem;font-weight:600;color:var(--sky-dark);margin-bottom:0.3rem;}
+.land-block-desc{font-size:0.75rem;color:var(--text-light);line-height:1.5;font-weight:300;}
+@media(max-width:900px){.land-blocks{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.vision-band{grid-template-columns:1fr;padding:2rem 1.5rem;gap:1.5rem;}.vision-body{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,0.2);padding-top:1rem;}.land-blocks{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -100,26 +114,24 @@
 <nav>
   <a href="/index.html" class="nav-logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · Tairāwhiti</span></a>
   <ul class="nav-links">
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/farm.html">The Farm</a></li>
+    <li><a href="/about.html">Our Tipuna</a></li>
     <li><a href="/people.html">Our People</a></li>
+    <li><a href="/governance.html">Governance</a></li>
     <li><a href="/education.html">Education</a></li>
     <li><a href="/news.html">News</a></li>
     <li><a href="/contact.html">Contact</a></li>
-    <li><a href="#portal" class="nav-portal" style="opacity:0.6;cursor:default;" title="Coming soon">Portal — Coming Soon</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile" id="mobileNav">
-  <a href="/about.html">About</a>
-  <a href="/farm.html">The Farm</a>
+  <a href="/about.html">Our Tipuna</a>
   <a href="/people.html">Our People</a>
+  <a href="/governance.html">Governance</a>
   <a href="/education.html">Education</a>
   <a href="/news.html">News</a>
   <a href="/contact.html">Contact</a>
-  <a href="#portal" class="mob-portal" style="opacity:0.6;">Shareholder Portal — Coming Soon</a>
 </div>
 
 <!-- ✏️ Pepeha ticker — edit lines between span tags -->
@@ -130,14 +142,14 @@
     <span class="ticker-item">Ko Horouta ō mātou waka</span>
     <span class="ticker-item">Ko Ngāti Rangi ō mātou hapū · Ko Ngāti Porou ō mātou iwi</span>
     <span class="ticker-item">Ko Tutumatai ō mātou whenua</span>
-    <span class="ticker-item">Ko Raana Te Iti Walker rāua ko Mere Roa Milner ō mātou tūpuna i heke mai ki tēnei whenua</span>
+    <span class="ticker-item">Ko Raana Te Iti Walker rāua ko Mere Roa Milner ō mātou tipuna i heke mai ki tēnei whenua</span>
     <span class="ticker-item">Mō ngā uri whakatipu — for the generations yet to come</span>
     <span class="ticker-item">Ko Hikurangi ō mātou maunga</span>
     <span class="ticker-item">Ko Waiapu, ko Mangaoparo ō mātou awa</span>
     <span class="ticker-item">Ko Horouta ō mātou waka</span>
     <span class="ticker-item">Ko Ngāti Rangi ō mātou hapū · Ko Ngāti Porou ō mātou iwi</span>
     <span class="ticker-item">Ko Tutumatai ō mātou whenua</span>
-    <span class="ticker-item">Ko Raana Te Iti Walker rāua ko Mere Roa Milner ō mātou tūpuna i heke mai ki tēnei whenua</span>
+    <span class="ticker-item">Ko Raana Te Iti Walker rāua ko Mere Roa Milner ō mātou tipuna i heke mai ki tēnei whenua</span>
     <span class="ticker-item">Mō ngā uri whakatipu — for the generations yet to come</span>
   </div>
 </div>
@@ -156,7 +168,6 @@
     <p class="hero-sub">Rotokautuku X1C Incorporation — guardians of 1,428 hectares of whenua on the East Coast, farming for generations past and yet to come.</p>
     <div class="ctas">
       <a href="/about.html" class="btn-p">Our Story</a>
-      <a href="#portal" class="btn-g" style="opacity:0.6;cursor:default;" title="Coming soon">Shareholder Portal — Coming Soon</a>
     </div>
   </div>
 </section>
@@ -167,6 +178,10 @@
   <div class="stat"><div class="stat-num">836 ha</div><div class="stat-label">Effective farming area</div></div>
   <div class="stat"><div class="stat-num">78</div><div class="stat-label">Shareholders &amp; their whānau</div></div>
   <div class="stat"><div class="stat-num">106+</div><div class="stat-label">Paddocks across the station</div></div>
+  <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Cattle</div></div>
+  <div class="stat"><div class="stat-num">5,000+</div><div class="stat-label">Sheep</div></div>
+  <div class="stat"><div class="stat-num">198 ha</div><div class="stat-label">Production forestry</div></div>
+  <div class="stat"><div class="stat-num">95.8 km</div><div class="stat-label">Fencing</div></div>
 </div>
 
 <!-- ✏️ About section text -->
@@ -175,8 +190,8 @@
     <div>
       <div class="sec-label">Who we are</div>
       <h2>A sacred thread connecting us to the land</h2>
-      <p class="body-p">The hill that rises 473 metres behind the homestead has carried the name Tutumatai since it was given by our tūpuna Uepōhatu as a sentinel over the lands that came under his mana. Beside it stands Tutukura, its companion sentinel. These are not just farm features. They are named by tūpuna.</p>
-      <p class="body-p">On this whenua sits the urupā of Umuariki — grandson of Uepōhatu, grandfather of Ngakonui — whose pā occupied this very ground and whose name our urupā carries. We are Ngāti Rangi, and our tūpuna rest here.</p>
+      <p class="body-p">The hill that rises 473 metres behind the homestead has carried the name Tutumatai since it was given by our tipuna Uepōhatu as a sentinel over the lands that came under his mana. Beside it stands Tutukura, its companion sentinel. These are not just farm features. They are named by tipuna.</p>
+      <p class="body-p">On this whenua sits the urupā of Umuariki — grandson of Uepōhatu, grandfather of Ngakonui — whose pā occupied this very ground and whose name our urupā carries. We are Ngāti Rangi, and our tipuna rest here.</p>
       <p class="body-p">Tutumatai Station is operated by Rotokautuku X1C Incorporation, governed by elected directors on behalf of 78 shareholders and their whānau. We farm this land. We protect it. And we will return it to those who come after us in better shape than we found it.</p>
     </div>
     <!-- ✏️ Home about photos: home-1.jpg (tall), home-2.jpg (bottom left), home-3.jpg (bottom right) -->
@@ -191,50 +206,42 @@
   </div>
 </section>
 
-<section class="section sky">
-  <div style="text-align:center;margin-bottom:3rem;">
-    <div class="sec-label" style="justify-content:center;">Explore the site</div>
-    <h2>Two zones, one platform</h2>
-    <p style="color:var(--text-mid);font-size:0.88rem;font-weight:300;">Public-facing story and private shareholder portal — unified under tutumataistation.nz</p>
+<!-- ✏️ GREEN BANNER (vision) — moved from Farm (#29) -->
+<div class="vision-band">
+  <div>
+    <div class="vision-te-reo">Ko te whakapumau i te mana o a tātou whenua hei oranga ai mō tātou</div>
+    <div class="vision-translation">To retain forever the essence of our land, to sustain prosperity for generations.</div>
   </div>
-  <div class="zones">
-    <div class="zone pub">
-      <span class="zone-badge">Public — no login required</span>
-      <h3>Public Website</h3>
-      <p class="zone-desc">Our story, our farm, our people, and how to get involved.</p>
-      <ul class="page-list">
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/farm.html">The Farm</a></li>
-        <li><a href="/people.html">Our People</a></li>
-        <li><a href="/education.html">Education</a></li>
-        <li><a href="/news.html">News &amp; Updates</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="zone priv">
-      <span class="zone-badge">Private — login required</span>
-      <h3>Shareholder Portal</h3>
-      <p class="zone-desc">Governance documents, financials, AGM materials and grant records for shareholders and COM.</p>
-      <ul class="page-list">
-        <li>Governance — minutes, resolutions, reports</li>
-        <li>Financials — accounts, audit reports</li>
-        <li>Farm Operations — stock reports</li>
-        <li>AGM Hub — notices, agendas, proxy</li>
-        <li>Education Grants — applications, decisions</li>
-        <li>COM Only — board papers (restricted)</li>
-      </ul>
-    </div>
+  <div class="vision-body">
+    At the heart of our vision is Tutumatai — a sacred thread connecting us to the land and to ourselves. Mai Ngā Toto! Mai Ngā Whakapapa! Our connection through blood and genealogy is the core of our identity and our responsibility as kaitiaki of this whenua.
   </div>
-</section>
+</div>
+
+<!-- ✏️ HOW THE LAND IS USED — moved from Farm + blue banner merged, duplicates removed (#28) -->
+<div class="land-cover-wrap" style="background:var(--cream);padding:4rem 4rem 1.5rem;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="sec-label" style="padding-top:0;">Land cover</div>
+    <h2>How the land is used</h2>
+    <p style="color:var(--text-light);font-size:0.85rem;margin-bottom:0;font-weight:300;">Mapped and assessed by LandVision Ltd, July 2025.</p>
+  </div>
+  <div class="land-blocks">
+    <div class="land-block"><div class="land-block-num">837.6 ha</div><div class="land-block-label">Pasture</div><div class="land-block-desc">Productive pastoral land supporting sheep and beef across flat to rolling country</div></div>
+    <div class="land-block"><div class="land-block-num">417.7 ha</div><div class="land-block-label">Bush &amp; Scrub</div><div class="land-block-desc">Indigenous bush and scrub providing biodiversity, erosion control, and kaitiakitanga values</div></div>
+    <div class="land-block"><div class="land-block-num">24%</div><div class="land-block-label">Flat to Undulating</div><div class="land-block-desc">River flats and tephra terraces — the most productive pastoral country on the station</div></div>
+    <div class="land-block"><div class="land-block-num">21%</div><div class="land-block-label">Rolling Downs</div><div class="land-block-desc">Easy to strongly rolling tephra and mudstone country — versatile grazing terrain</div></div>
+    <div class="land-block"><div class="land-block-num">55%</div><div class="land-block-label">Hill Country</div><div class="land-block-desc">Easy to moderately steep argillite hill country — the backbone of the station's grazing system</div></div>
+    <div class="land-block"><div class="land-block-num">9.3 km</div><div class="land-block-label">Waterways Fenced</div><div class="land-block-desc">Permanent waterways fenced to exclude stock and protect water quality</div></div>
+  </div>
+</div>
 
 <section class="section cream">
   <div class="inner">
     <div class="sec-label">Our values</div>
     <h2>What guides us</h2>
     <div class="values-grid">
-      <div class="val-card"><h3>Integrity</h3><p>Our moral compass — guiding us to make ethical choices that uphold the trust placed in us by our shareholders, our community, and the land itself.</p></div>
-      <div class="val-card"><h3>Honesty</h3><p>The cornerstone of our relationships. Trust is built and maintained through open, transparent communication with our shareholders and whānau.</p></div>
-      <div class="val-card"><h3>Kaitiakitanga</h3><p>Mō ngā uri whakatipu. We are caretakers of the land for future generations — committed to leaving it in better shape than we found it.</p></div>
+      <div class="val-card"><h3>Integrity</h3><div class="val-reo">Ngākau Tapatahi</div><p>Our moral compass — guiding us to make ethical choices that uphold the trust placed in us by our shareholders, our community, and the land itself.</p></div>
+      <div class="val-card"><h3>Honesty</h3><div class="val-reo">Pono</div><p>The cornerstone of our relationships. Trust is built and maintained through open, transparent communication with our shareholders and whānau.</p></div>
+      <div class="val-card"><h3>Kaitiakitanga</h3><div class="val-reo">Guardianship</div><p>Mō ngā uri whakatipu. We are caretakers of the land for future generations — committed to leaving it in better shape than we found it.</p></div>
     </div>
   </div>
 </section>

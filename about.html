@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>About Us — Tutumatai Station</title>
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<title>Our Tipuna — Tutumatai Station</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
@@ -25,16 +27,14 @@
 .founder-ph span{font-family:monospace;font-size:0.6rem;color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.4);padding:0.2rem 0.4rem;border-radius:2px;text-align:center;}
 .founder-card .fname{font-family:'Dancing Script',cursive;font-size:1.3rem;color:var(--sky-dark);}
 .founder-card .fdates{font-size:0.72rem;color:var(--text-light);letter-spacing:0.08em;margin-top:0.1rem;}
-.tl{display:flex;flex-direction:column;gap:0;max-width:800px;margin:2rem auto 0;}
-.tl-item{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid rgba(74,104,40,0.12);}
+.strand-title{font-family:'Dancing Script',cursive;font-size:1.5rem;color:var(--sky-dark);margin:2.5rem 0 0.3rem;}
+.strand-sub{font-size:0.78rem;color:var(--text-light);font-weight:300;margin-bottom:0.5rem;}
+.tl{display:flex;flex-direction:column;gap:0;max-width:800px;margin:1rem auto 0;}
+.tl-item{display:grid;grid-template-columns:110px 1fr;gap:1.5rem;padding:1.3rem 0;border-bottom:1px solid rgba(74,104,40,0.12);}
 .tl-item:last-child{border-bottom:none;}
-.tl-year{font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--pasture);line-height:1;padding-top:0.1rem;}
+.tl-year{font-family:'Dancing Script',cursive;font-size:1.35rem;color:var(--pasture);line-height:1.1;padding-top:0.1rem;}
 .tl-content h4{font-size:0.9rem;font-weight:600;color:var(--sky-dark);margin-bottom:0.3rem;}
 .tl-content p{font-size:0.82rem;color:var(--text-light);line-height:1.6;font-weight:300;}
-.gov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(45,90,150,0.1);border:1px solid rgba(45,90,150,0.1);margin-top:2rem;}
-.gov-item{background:white;padding:1.5rem;}
-.gov-item h4{font-size:0.85rem;font-weight:600;color:var(--sky-dark);margin-bottom:0.4rem;}
-.gov-item p{font-size:0.78rem;color:var(--text-light);line-height:1.55;font-weight:300;}
 @media(max-width:768px){
   nav{padding:0 1.2rem;}
   .nav-links{display:none;}
@@ -44,12 +44,10 @@
   .section{padding:3rem 1.5rem;}
   .founders{grid-template-columns:1fr;gap:2rem;}
   .founder-photos{flex-wrap:wrap;}
-  .gov-grid{grid-template-columns:1fr 1fr;}
-  .tl-item{grid-template-columns:60px 1fr;gap:1rem;}
+  .tl-item{grid-template-columns:80px 1fr;gap:1rem;}
   footer{flex-direction:column;gap:1rem;padding:2rem 1.5rem;text-align:center;}
 }
 @media(max-width:480px){
-  .gov-grid{grid-template-columns:1fr;}
   .founder-photos{flex-direction:column;align-items:center;}
 }
 </style>
@@ -59,40 +57,35 @@
 <nav>
   <a href="/index.html" class="nav-logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · Tairāwhiti</span></a>
   <ul class="nav-links">
-    <li><a href="/about.html" class="active">About</a></li>
-    <li><a href="/farm.html">The Farm</a></li>
+    <li><a href="/about.html" class="active">Our Tipuna</a></li>
     <li><a href="/people.html">Our People</a></li>
+    <li><a href="/governance.html">Governance</a></li>
     <li><a href="/education.html">Education</a></li>
     <li><a href="/news.html">News</a></li>
     <li><a href="/contact.html">Contact</a></li>
-    <li><a href="#portal" class="nav-portal" style="opacity:0.6;cursor:default;" title="Coming soon">Portal — Coming Soon</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileNav">
-  <a href="/about.html" class="active">About</a>
-  <a href="/farm.html">The Farm</a>
+  <a href="/about.html" class="active">Our Tipuna</a>
   <a href="/people.html">Our People</a>
+  <a href="/governance.html">Governance</a>
   <a href="/education.html">Education</a>
   <a href="/news.html">News</a>
   <a href="/contact.html">Contact</a>
-  <a href="#portal" class="mob-portal" style="opacity:0.6;">Shareholder Portal — Coming Soon</a>
 </div>
 
 <!-- ✏️ Hero photo: about-hero.jpg (panoramic valley) -->
 <section class="hero" style="height:55vh;">
   <div class="hero-img" style="background-image:url('/images/about-hero.jpg');background-position:center 30%;"></div>
   <div class="hero-content">
-    <div class="eyebrow">Rotokautuku X1C Incorporation · Est. Tairāwhiti</div>
-    <h1>About Tutumatai Station</h1>
-    <p class="hero-sub">A Māori land incorporation governed by elected directors, farming and protecting whenua for 78 shareholders and their whānau.</p>
+    <div class="eyebrow">Rotokautuku X1C Incorporation · Tairāwhiti</div>
+    <h1>Our Tipuna</h1>
+    <p class="hero-sub">The whakapapa, the whenua, and the people who have led Tutumatai Station across the generations.</p>
   </div>
 </section>
 
-<!-- ✏️ Founders section
-     tupuna-raana-walker.jpg = formal b&w portrait (young man, bow tie)
-     tupuna-mere-roa-milner.jpg = b&w portrait (woman with glasses)
--->
+<!-- ✏️ Tipuna section — about-1.jpg = Raana Te Iti Walker · about-2.jpg = Mere Roa Milner -->
 <section class="section cream">
   <div class="inner">
     <div class="founders">
@@ -101,60 +94,73 @@
           <img src="/images/about-1.jpg" alt="Raana Te Iti Walker" class="founder-img"
                onerror="this.outerHTML='<div class=\'founder-ph\'><span>about-1.jpg</span></div>'">
           <div class="fname">Raana Te Iti Walker</div>
-          <div class="fdates">Papa Raana</div>
+          <div class="fdates">Papa Raana · 1881–1932</div>
         </div>
         <div class="founder-card">
           <img src="/images/about-2.jpg" alt="Mere Roa Milner" class="founder-img"
                onerror="this.outerHTML='<div class=\'founder-ph\'><span>about-2.jpg</span></div>'">
           <div class="fname">Mere Roa Milner</div>
-          <div class="fdates">Nanny Walker</div>
+          <div class="fdates">Nanny Walker · 1887–1980</div>
         </div>
       </div>
       <div>
-        <div class="sec-label">Our tūpuna</div>
+        <div class="sec-label">Our tipuna</div>
         <h2>He kāwai whakapapa tēnei nō Raana Te Iti Walker rāua ko Mere Roa Milner.</h2>
-        <p class="lead">The Incorporation carries the legacy of Raana Te Iti Walker and Mere Roa Milner — our tūpuna whose connection to this whenua established the foundation for all that Tutumatai Station is today.</p>
+        <p class="lead">The Incorporation carries the legacy of Raana Te Iti Walker and Mere Roa Milner — our tipuna whose connection to this whenua established the foundation for all that Tutumatai Station is today.</p>
         <p class="lead" style="font-size:0.88rem;">All descendants of Raana and Mere Roa are shareholders and eligible for the education grant programme. Their whakapapa is the thread that connects 78 owners across Aotearoa to this land in Tairāwhiti.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ✏️ History timeline — add/remove tl-item blocks to update -->
+<!-- ✏️ Farming with purpose (moved from Farm) -->
 <section class="section">
-  <div class="inner">
-    <div class="sec-label">Our history</div>
-    <h2>A history rooted in whenua</h2>
-    <div class="tl">
-      <div class="tl-item"><div class="tl-year" style="font-size:1rem;padding-top:0.4rem;">Founded</div><div class="tl-content"><h4>Rotokautuku X1C Incorporation formed</h4><p>The Incorporation was established under Te Ture Whenua Māori Act to govern and protect the ancestral land at Tutumatai for the benefit of all shareholders and their descendants.</p></div></div>
-      <div class="tl-item"><div class="tl-year">2023</div><div class="tl-content"><h4>New Committee of Management elected</h4><p>A new governance era begins with a Committee committed to transparency, accountability, and long-term stewardship of the whenua and the business.</p></div></div>
-      <div class="tl-item"><div class="tl-year">2025</div><div class="tl-content"><h4>Education Grant Programme launched</h4><p>The Incorporation formally establishes a grant programme for descendants of Raana and Mere Roa in tertiary education — investing in the next generation.</p></div></div>
-      <div class="tl-item"><div class="tl-year">2025</div><div class="tl-content"><h4>Farm Environment Plan completed</h4><p>LandVision Ltd completes a comprehensive Farm Environment Plan — mapping all 1,428 ha and establishing environmental commitments for the next generation.</p></div></div>
-      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-content"><h4>Digital modernisation underway</h4><p>Microsoft 365 deployment and this website mark a new era in governance transparency and shareholder communication.</p></div></div>
-    </div>
+  <div class="inner" style="max-width:760px;">
+    <div class="sec-label">Sheep &amp; beef</div>
+    <h2>Farming with purpose across generations</h2>
+    <p class="lead">Tutumatai is a traditional East Coast hill country sheep and beef operation. Breeding ewes, store lambs, and beef cattle are run across the full range of the station's country.</p>
+    <p class="lead">The station's farming programme is built around matching stock class to land class — utilising the flat and rolling country for finishing and wintering, and the hill country for breeding and growing stock.</p>
+    <p class="lead">A GAP Step 4 certification underpins the station's commitment to quality assurance and best-practice animal welfare.</p>
   </div>
 </section>
 
-<!-- ✏️ Governance grid — edit each gov-item -->
+<!-- ✏️ TIMELINE — two strands. Replace yyyy–yyyy with confirmed dates as they are known. -->
 <section class="section sky">
   <div class="inner">
-    <div class="sec-label">Governance</div>
-    <h2>How we are governed</h2>
-    <p class="lead">Rotokautuku X1C Incorporation is governed under Te Ture Whenua Māori Act by an elected Committee of Management accountable to 78 shareholders.</p>
-    <div class="gov-grid">
-      <div class="gov-item"><h4>Committee of Management</h4><p>An elected board of directors responsible for all governance decisions — strategy, finances, operations, and shareholder relations.</p></div>
-      <div class="gov-item"><h4>78 Shareholders</h4><p>All descendants of Raana and Mere Roa Walker. Shareholders vote at AGMs, receive annual reports, and are entitled to apply for education grants.</p></div>
-      <div class="gov-item"><h4>Annual General Meeting</h4><p>The AGM is held annually and open to all shareholders — the primary forum for reporting on the year's performance and electing directors.</p></div>
-      <div class="gov-item"><h4>Independent Audit</h4><p>Financial statements are independently audited by Coates Associates Ltd (Mitchell McFarlane), Gisborne, and presented to shareholders annually.</p></div>
-      <div class="gov-item"><h4>Farm Management</h4><p>Day-to-day farming operations are managed by a professional Farm Manager supported by a shepherd, with oversight from the COM.</p></div>
-      <div class="gov-item"><h4>Te Ture Whenua Māori Act</h4><p>The Incorporation operates under this Act, which protects Māori land from alienation and ensures it remains in the hands of its owners and descendants.</p></div>
+    <div class="sec-label">Our history</div>
+    <h2>A history rooted in whenua</h2>
+
+    <h3 class="strand-title">The whenua</h3>
+    <div class="strand-sub">Key moments in the land and the Incorporation.</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-content"><h4>Tutumatai Homestead renovated</h4><p>The homestead is renovated and restored to its former glory.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2016</div><div class="tl-content"><h4>Thatchers block added</h4><p>Approximately 200 ha is added to the station, expanding the area under the Incorporation’s care.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2013</div><div class="tl-content"><h4>Forestry established</h4><p>151 ha of production forest is planted in 2013, part of approximately 198 ha of forest on the station today.</p></div></div>
+      <div class="tl-item"><div class="tl-year">1995</div><div class="tl-content"><h4>Committee of Management established</h4><p>An elected Committee of Management is formalised to govern the Incorporation on behalf of shareholders.</p></div></div>
+      <div class="tl-item"><div class="tl-year">1951</div><div class="tl-content"><h4>Rotokautuku X1C Incorporation formed</h4><p>The Incorporation is formally constituted on 26 January 1951 under Te Ture Whenua Māori Act, establishing the Chairperson role to govern on behalf of all shareholders.</p></div></div>
+      <div class="tl-item"><div class="tl-year">1932</div><div class="tl-content"><h4>Raana Tuterangi takes over</h4><p>On the passing of Raana Te Iti Walker, Raana Tuterangi takes over running the farm, continuing until his own passing in 1985.</p></div></div>
+      <div class="tl-item"><div class="tl-year">1921</div><div class="tl-content"><h4>Land leased to Papa Raana Te Iti</h4><p>The whenua at Tutumatai is leased to Raana Te Iti Walker, who runs the farm until his passing in 1932 — the beginning of the whānau’s stewardship of this land.</p></div></div>
+    </div>
+
+    <h3 class="strand-title">Our chairpeople</h3>
+    <div class="strand-sub">Those who have led the Committee of Management over the years.</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-year">1932–1985</div><div class="tl-content"><h4>Raana Tuterangi</h4><p>First Chairperson — took over the whenua in 1932 when his father passed, and led until his own passing in 1985.</p></div></div>
+      <div class="tl-item"><div class="tl-year">yyyy–yyyy</div><div class="tl-content"><h4>Bill Walker</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">yyyy–yyyy</div><div class="tl-content"><h4>Jim Walker</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">yyyy–yyyy</div><div class="tl-content"><h4>Sam Walker</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">yyyy–yyyy</div><div class="tl-content"><h4>June Mead</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">2007–2016</div><div class="tl-content"><h4>Dan Kawhia</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">yyyy–yyyy</div><div class="tl-content"><h4>Jaye Woodford</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">2022–2025</div><div class="tl-content"><h4>Ed Kawhia</h4><p>Chairperson</p></div></div>
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-content"><h4>Audine Grace Kutia</h4><p>Chairperson</p></div></div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="logo">Tutumatai Station<span>Rotokautuku X1C Incorporation · 307 Mangaoporo Road, RD 3, Ruatoria · Tairāwhiti</span></div>
-  <p>tutumataistation.nz — About</p>
+  <p>tutumataistation.nz — Our Tipuna</p>
 </footer>
 
 <script>
