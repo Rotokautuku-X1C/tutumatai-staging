@@ -9,6 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
+.tipuna-hero{margin-top:64px;background:#394e3d;color:white;padding:2.5rem 2rem 3rem;text-align:center;}
+.th-head{max-width:1000px;margin:0 auto 1.5rem;}
+.th-head .eyebrow{justify-content:center;}
+.tipuna-hero h1{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,5vw,4.2rem);color:white;line-height:1.05;}
+.th-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:560px;line-height:1.6;margin:0.6rem auto 0;}
+.th-img{display:block;width:100%;max-width:800px;height:auto;margin:0 auto;}
+.th-whakapapa{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1000px;margin:2rem auto 0;}
+.th-whakapapa p{color:rgba(255,255,255,0.82);font-size:1rem;font-weight:300;line-height:1.6;}
+.th-whakapapa p.th-lead{color:white;font-size:1.12rem;font-weight:400;font-style:italic;margin-bottom:0.4rem;}
+@media(max-width:700px){.tipuna-hero{padding:2rem 1rem 2.5rem;}.th-whakapapa{grid-template-columns:1fr;gap:1.5rem;}}
 .hero{margin-top:64px;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
 .hero-img{position:absolute;inset:0;background-size:cover;background-position:center center;}
 .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.45) 100%);}
@@ -75,13 +85,25 @@
   <a href="/contact.html">Contact</a>
 </div>
 
-<!-- ✏️ Hero photo: about-hero.jpg (panoramic valley) -->
-<section class="hero" style="height:55vh;">
-  <div class="hero-img" style="background-image:url('/images/about-hero.jpg');background-position:center 30%;"></div>
-  <div class="hero-content">
+<!-- ✏️ Hero: tipuna-hero.jpg (tipuna portrait collage) + whakapapa text. Green #394e3d matches the photo background -->
+<section class="tipuna-hero">
+  <div class="th-head">
     <div class="eyebrow">Rotokautuku X1C Incorporation · Tairāwhiti</div>
     <h1>Our Tipuna</h1>
-    <p class="hero-sub">The whakapapa, the whenua, and the people who have led Tutumatai Station across the generations.</p>
+    <p class="th-sub">The whakapapa, the whenua, and the people who have led Tutumatai Station across the generations.</p>
+  </div>
+  <img src="/images/tipuna-hero.jpg" srcset="/images/tipuna-hero.jpg 1x, /images/tipuna-hero@2x.jpg 2x" alt="Portraits of our tipuna" class="th-img" width="798" height="481">
+  <div class="th-whakapapa">
+    <div class="th-line">
+      <p class="th-lead">Ka moe a Keita Te Hauauru Aupouri ki a William Milner, ka puta ko Mary Roa Milner</p>
+      <p>Ko Ngāti Rangi, ko Hinetāpora ngā hapū</p>
+      <p>Ko Reporua, ko Mangahanea ngā marae</p>
+    </div>
+    <div class="th-line">
+      <p class="th-lead">Ka moe a Wharepapa Te Ao ki a George Walker, ka puta ko Raana Te Iti Walker</p>
+      <p>Ko Te Whānau a Rākaihoea te hapū</p>
+      <p>Ko Kakariki te marae</p>
+    </div>
   </div>
 </section>
 
