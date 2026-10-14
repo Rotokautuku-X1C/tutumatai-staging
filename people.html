@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
-.people-hero{margin-top:64px;position:relative;overflow:hidden;}
-.people-hero img{width:100%;display:block;height:auto;}
-.people-hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(20,40,20,0.75),transparent);padding:2rem 4rem 2.5rem;}
+.people-hero{margin-top:64px;background:#394e3d;padding:2.5rem 2rem 3rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.people-hero img{order:2;width:100%;max-width:1100px;display:block;height:auto;box-shadow:0 6px 24px rgba(0,0,0,0.35);}
+.people-hero-overlay{order:1;margin-bottom:1.8rem;display:flex;flex-direction:column;align-items:center;}
 .people-hero-overlay .eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.7rem;font-weight:300;}
 .people-hero-overlay .eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
 .people-hero-overlay h1{font-family:'Dancing Script',cursive;font-size:clamp(2rem,4vw,3.5rem);color:white;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:0.4rem;}
-.people-hero-overlay .hero-sub{color:rgba(255,255,255,0.78);font-size:0.9rem;font-weight:300;max-width:500px;line-height:1.5;}
+.people-hero-overlay .hero-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:560px;line-height:1.6;}
 .people-hero-ph{width:100%;height:320px;background:#2a3a2a;display:flex;align-items:center;justify-content:center;}
 .people-hero-ph span{font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.4);padding:0.3rem 0.7rem;border-radius:2px;}
 .section.sky{background:var(--light-sky);}
@@ -58,7 +58,7 @@ h2.light{color:white;}
   .nav-links{display:none;}
   .nav-hamburger{display:flex;}
   .nav-mobile.open{display:block;}
-  .people-hero-overlay{padding:1.5rem 1.5rem 2rem;}
+  .people-hero{padding:2rem 1rem 2.5rem;}
   .section{padding:3rem 1.5rem;}
   .com-grid{grid-template-columns:repeat(2,1fr);}
   .staff-grid{grid-template-columns:1fr 1fr;}
@@ -85,6 +85,7 @@ h2.light{color:white;}
   <ul class="nav-links">
     <li><a href="/about.html">Our Tipuna</a></li>
     <li><a href="/people.html" class="active">Our People</a></li>
+    <li><a href="/farm.html">The Farm</a></li>
     <li><a href="/governance.html">Governance</a></li>
     <li><a href="/education.html">Education</a></li>
     <li><a href="/news.html">News</a></li>
@@ -95,6 +96,7 @@ h2.light{color:white;}
 <div class="nav-mobile" id="mobileNav">
   <a href="/about.html">Our Tipuna</a>
   <a href="/people.html" class="active">Our People</a>
+  <a href="/farm.html">The Farm</a>
   <a href="/governance.html">Governance</a>
   <a href="/education.html">Education</a>
   <a href="/news.html">News</a>
@@ -104,121 +106,22 @@ h2.light{color:white;}
 
 <!-- ✏️ Hero: people-hero.jpg (whānau collage) -->
 <div class="people-hero">
-  <img src="/images/people-hero.jpg" alt="Our whānau"
+  <img src="/images/people-hero.jpg?v=20261014b" alt="Our whānau"
        onerror="this.outerHTML='<div class=\'people-hero-ph\'><span>people-hero.jpg</span></div>'">
   <div class="people-hero-overlay">
     <div class="eyebrow">Te whānau o Tutumatai</div>
     <h1>Our People</h1>
-    <p class="hero-sub">The descendants of Raana Te Iti Walker and Mere Roa Milner — the whānau at the heart of Tutumatai Station.</p>
+    <p class="hero-sub">The descendants of Raana Te Iti Walker and Mary Roa Milner — the whānau at the heart of Tutumatai Station.</p>
   </div>
 </div>
 
-<!-- ✏️ FIRST GENERATION (G1) — children of Raana & Mere Roa.
-     Upload g1-1.jpg … g1-8.jpg to images/ and replace the [G1 name] text. Two rows of four, eldest first. -->
+<!-- ✏️ WHĀNAU TODAY — add later generations here as photos and names come in -->
 <section class="section cream">
-  <div class="inner">
-    <div class="sec-label">Ngā uri — First Generation</div>
-    <h2>The First Generation</h2>
-    <p class="lead">The first generation — the tamariki of Raana Te Iti Walker and Mere Roa Milner, shown with their spouses. Names, spellings and nicknames to be confirmed by the COM; photographs to be added.</p>
-
-    <div class="g1-featured">
-      <div class="person-card">
-        <img src="/images/g1-1.jpg" class="person-photo" alt="Raana Tuterangi"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-1.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Raana Tuterangi (Boy)</div>
-          <div class="g1-dates">1909 – 1985</div>
-          <div class="person-role">m. Ani Reedy</div>
-        </div>
-      </div>
-      <div class="g1-feature-text">
-        <p>Following the unexpected death of Papa Raana Te Iti in 1932, Boy took over running the farm with Nanny Walker, at the age of 22 — with 13 children at home aged from 3 to 22.</p>
-      </div>
-    </div>
-
-    <div class="com-grid">
-
-      <div class="person-card">
-        <img src="/images/g1-2.jpg" class="person-photo" alt="Ronald William (Ronnie)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-2.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Ronald William (Ronnie)</div>
-          <div class="g1-dates">b. 1911</div>
-          <div class="person-role">m. Maraea Kaku Poi</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-3.jpg" class="person-photo" alt="Roberta (Hoppy)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-3.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Roberta (Hoppy)</div>
-          <div class="g1-dates">b. 1913</div>
-          <div class="person-role">m. John Tibble</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-4.jpg" class="person-photo" alt="Keita Te Hauauru (Barn)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-4.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Keita Te Hauauru (Barn)</div>
-          <div class="g1-dates">b. 1915</div>
-          <div class="person-role">m. Wananga Te Ariki Haig (Walton)</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-5.jpg" class="person-photo" alt="Te Oho Mauri (Munen)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-5.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Te Oho Mauri (Munen)</div>
-          <div class="g1-dates">b. 1917</div>
-          <div class="person-role">m. Morehu Whangapirita (Bussie)</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-6.jpg" class="person-photo" alt="James Wi Hekopa (Jim)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-6.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">James Wi Hekopa (Jim)</div>
-          <div class="g1-dates">b. 1920</div>
-          <div class="person-role">m. Tangi Taheke Harrison (Baby)</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-7.jpg" class="person-photo" alt="George Kiwa (John)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-7.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">George Kiwa (John)</div>
-          <div class="g1-dates">b. 1921</div>
-          <div class="person-role">m. Keita Ngarimu</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-8.jpg" class="person-photo" alt="Henrietta (Henri)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-8.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Henrietta (Henri)</div>
-          <div class="g1-dates">b. 1924</div>
-          <div class="person-role">m. Eruera Kawhia</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="/images/g1-9.jpg" class="person-photo" alt="Erica Te Rina (June)"
-             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-9.jpg</span></div>'">
-        <div class="person-body">
-          <div class="person-name">Erica Te Rina (June)</div>
-          <div class="g1-dates">b. 1929</div>
-          <div class="person-role">m. Sidney Moko Mead</div>
-        </div>
-      </div>
-
-    </div>
+  <div class="inner" style="max-width:760px;">
+    <div class="sec-label">Ngā uri — whānau today</div>
+    <h2>The whānau of Tutumatai</h2>
+    <p class="lead">Today 78 shareholders and their whānau, all descendants of Raana Te Iti Walker and Mary Roa Milner, carry the connection to this whenua across Aotearoa and beyond.</p>
+    <p class="lead">The first generation — the tamariki of Raana and Mary Roa — are remembered on the <a href="/about.html#first-generation" style="color:var(--sky-dark);">Our Tipuna</a> page.</p>
   </div>
 </section>
 
