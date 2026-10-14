@@ -24,3 +24,13 @@ footer{background:#111e2e;padding:2.5rem 4rem;display:flex;align-items:center;ju
 footer .logo{font-family:'Dancing Script',cursive;font-size:1.3rem;color:white;}
 footer .logo span{display:block;font-family:'Source Sans 3',sans-serif;font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:300;margin-top:2px;}
 footer p{font-size:0.72rem;color:rgba(255,255,255,0.25);}
+
+/* Framed hero — green band, title above, photo framed below (all pages) */
+.framed-hero{margin-top:64px;background:#394e3d;padding:2rem 2rem 2.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.framed-hero .eyebrow{justify-content:center;font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.7rem;font-weight:300;}
+.framed-hero .eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
+.framed-hero h1{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,5vw,4.2rem);color:white;line-height:1.05;margin-bottom:0.5rem;}
+.framed-hero .hero-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:600px;line-height:1.6;margin:0 auto 1.8rem;}
+.framed-hero .fh-photo{width:100%;max-width:1200px;aspect-ratio:16/8;object-fit:cover;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.35);}
+.framed-hero .ctas{justify-content:center;margin:0 0 1.8rem;}
+@media(max-width:768px){.framed-hero{padding:1.75rem 1rem 2rem;}.framed-hero .fh-photo{aspect-ratio:4/3;}}
