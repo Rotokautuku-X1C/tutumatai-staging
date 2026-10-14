@@ -74,12 +74,15 @@
 @media(max-width:900px){.com-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:768px){.com-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:760px){.g1-featured{grid-template-columns:1fr}}
-.boy-panel{display:grid !important;grid-template-columns:1fr minmax(220px,52%);gap:1.6rem;align-items:center !important;padding:0 !important;overflow:hidden;}
-.boy-panel p{padding:20px 0 20px 24px;margin:0;}
+.boy-panel{border:none !important;display:grid !important;grid-template-columns:1fr minmax(220px,52%);gap:0;align-items:center !important;padding:0 !important;overflow:hidden;}
+.boy-feature{font-style:normal;background:var(--sky-dark);height:100%;display:flex;flex-direction:column;justify-content:center;padding:1.6rem 1.8rem;}
+.bf-eyebrow{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(150,200,100,0.9);font-weight:600;margin-bottom:0.5rem;}
+.bf-title{font-family:'Dancing Script',cursive;font-size:1.6rem;color:#fff;line-height:1.15;margin-bottom:0.8rem;}
+.boy-feature p{color:rgba(255,255,255,0.82);font-style:normal;font-size:0.95rem;font-weight:300;line-height:1.7;margin:0;}
 .boy-photo{margin:0;height:100%;position:relative;}
 .boy-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;min-height:260px;}
 .boy-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:0.5rem 0.8rem;font-size:0.68rem;letter-spacing:0.06em;color:rgba(255,255,255,0.9);font-style:normal;background:linear-gradient(to top,rgba(0,0,0,0.45),transparent);}
-@media(max-width:760px){.boy-panel{grid-template-columns:1fr;gap:0;}.boy-panel p{padding:20px 22px;}.boy-photo img{max-height:340px;}}
+@media(max-width:760px){.boy-panel{grid-template-columns:1fr;gap:0;}.boy-photo img{max-height:340px;}}
 </style>
 </head>
 <body>
@@ -175,7 +178,11 @@
         </div>
       </div>
       <div class="g1-feature-text boy-panel">
-        <p>Following the unexpected passing of Papa Raana Te Iti in 1932, Boy took over running the farm with Nanny Walker, at the age of 22 — with 13 children at home aged from 3 to 22.</p>
+        <div class="boy-feature">
+          <div class="bf-eyebrow">1932 · Taking over the whenua</div>
+          <div class="bf-title">Boy and Nanny Walker</div>
+          <p>Following the unexpected passing of Papa Raana Te Iti in 1932, Boy took over running the farm with Nanny Walker, at the age of 22 — with 13 children at home aged from 3 to 22.</p>
+        </div>
         <figure class="boy-photo">
           <img src="/images/walker-rd.jpg?v=20261014a" alt="Walker Rd sign beside the paddocks at Tutumatai" width="865" height="913">
           <figcaption>Walker Rd, Tutumatai</figcaption>
