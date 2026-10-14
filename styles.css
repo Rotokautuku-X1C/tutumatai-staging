@@ -14,7 +14,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-mobile a{display:block;color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.8rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
 .nav-mobile a:hover{color:white;background:rgba(255,255,255,0.05);}
 .nav-mobile .mob-portal{background:var(--pasture);color:white!important;margin:0.8rem 2rem 0;padding:0.7rem 1rem;text-align:center;display:block;}
-.section{padding:4.5rem 4rem;}
+.section{padding:2.75rem 4rem;}
 .section.cream{background:var(--cream);}
 .inner{max-width:1200px;margin:0 auto;}
 .sec-label{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--pasture);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;font-weight:600;}

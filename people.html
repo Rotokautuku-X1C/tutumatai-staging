@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
-.people-hero{margin-top:64px;background:#394e3d;padding:2.5rem 2rem 3rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.people-hero{margin-top:64px;background:#394e3d;padding:2rem 2rem 2.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
 .people-hero img{order:2;width:100%;max-width:1100px;display:block;height:auto;box-shadow:0 6px 24px rgba(0,0,0,0.35);}
 .people-hero-overlay{order:1;margin-bottom:1.8rem;display:flex;flex-direction:column;align-items:center;}
 .people-hero-overlay .eyebrow{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.7rem;font-weight:300;}
@@ -59,7 +59,7 @@ h2.light{color:white;}
   .nav-hamburger{display:flex;}
   .nav-mobile.open{display:block;}
   .people-hero{padding:2rem 1rem 2.5rem;}
-  .section{padding:3rem 1.5rem;}
+  .section{padding:2rem 1.25rem;}
   .com-grid{grid-template-columns:repeat(2,1fr);}
   .staff-grid{grid-template-columns:1fr 1fr;}
   .advisor-grid{grid-template-columns:1fr;}
@@ -91,6 +91,7 @@ h2.light{color:white;}
   <ul class="nav-links">
     <li><a href="/about.html">Our Tipuna</a></li>
     <li><a href="/people.html" class="active">Our People</a></li>
+    <li><a href="/farm.html">The Farm</a></li>
     <li><a href="/governance.html">Governance</a></li>
     <li><a href="/education.html">Education</a></li>
     <li><a href="/news.html">News</a></li>
@@ -101,6 +102,7 @@ h2.light{color:white;}
 <div class="nav-mobile" id="mobileNav">
   <a href="/about.html">Our Tipuna</a>
   <a href="/people.html" class="active">Our People</a>
+  <a href="/farm.html">The Farm</a>
   <a href="/governance.html">Governance</a>
   <a href="/education.html">Education</a>
   <a href="/news.html">News</a>
@@ -115,7 +117,7 @@ h2.light{color:white;}
   <div class="people-hero-overlay">
     <div class="eyebrow">Te whānau o Tutumatai</div>
     <h1>Our People</h1>
-    <p class="hero-sub">The descendants of Raana Te Iti Walker and Mary Roa Milner — the whānau, values and farm team at the heart of Tutumatai Station.</p>
+    <p class="hero-sub">The descendants of Raana Te Iti Walker and Mary Roa Milner — the whānau at the heart of Tutumatai Station.</p>
   </div>
 </div>
 
@@ -126,61 +128,6 @@ h2.light{color:white;}
     <h2>The whānau of Tutumatai</h2>
     <p class="lead">Today 78 shareholders and their whānau, all descendants of Raana Te Iti Walker and Mary Roa Milner, carry the connection to this whenua across Aotearoa and beyond.</p>
     <p class="lead">The first generation — the tamariki of Raana and Mary Roa — are remembered on the <a href="/about.html#first-generation" style="color:var(--sky-dark);">Our Tipuna</a> page.</p>
-  </div>
-</section>
-
-<!-- ✏️ VALUES (moved from Home) -->
-<section class="section">
-  <div class="inner">
-    <div class="sec-label">Our values</div>
-    <h2>What guides us</h2>
-    <div class="values-grid">
-      <div class="val-card"><h3>Integrity</h3><div class="val-reo">Ngākau Tapatahi</div><p>Our moral compass — guiding us to make ethical choices that uphold the trust placed in us by our shareholders, our community, and the land itself.</p></div>
-      <div class="val-card"><h3>Honesty</h3><div class="val-reo">Pono</div><p>The cornerstone of our relationships. Trust is built and maintained through open, transparent communication with our shareholders and whānau.</p></div>
-      <div class="val-card"><h3>Kaitiakitanga</h3><div class="val-reo">Guardianship</div><p>Mō ngā uri whakatipu. We are caretakers of the land for future generations — committed to leaving it in better shape than we found it.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ✏️ Farming with purpose (moved from Our Tipuna) -->
-<section class="section cream">
-  <div class="inner" style="max-width:760px;">
-    <div class="sec-label">Sheep &amp; beef</div>
-    <h2>Farming with purpose across generations</h2>
-    <p class="lead">Tutumatai is a traditional East Coast hill country sheep and beef operation. Breeding ewes, store lambs, and beef cattle are run across the full range of the station's country.</p>
-    <p class="lead">The station's farming programme is built around matching stock class to land class — utilising the flat and rolling country for finishing and wintering, and the hill country for breeding and growing stock.</p>
-    <p class="lead">A GAP Step 4 certification underpins the station's commitment to quality assurance and best-practice animal welfare.</p>
-  </div>
-</section>
-
-<!-- ✏️ FARM TEAM -->
-<section class="section">
-  <div class="inner">
-    <div class="sec-label">Farm team</div>
-    <h2>The people on the ground</h2>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <img src="/images/staff-1.jpg" class="staff-photo" alt="Shane Sergent"
-             onerror="this.outerHTML='<div class=\'staff-photo-ph\'><span>staff-1.jpg</span></div>'">
-        <h4>Shane Sergent</h4>
-        <div class="role">Farm Manager</div>
-        <p>Managing day-to-day sheep and beef operations across Tutumatai's 836 ha effective area.</p>
-      </div>
-      <div class="staff-card">
-        <img src="/images/staff-2.jpg" class="staff-photo" alt="Shepherd"
-             onerror="this.outerHTML='<div class=\'staff-photo-ph\'><span>staff-2.jpg</span></div>'">
-        <h4>Pounamu Reeves</h4>
-        <div class="role">Shepherd</div>
-        <p>Supporting all on-farm livestock operations including mustering, drenching, and daily stock welfare checks.</p>
-      </div>
-      <div class="staff-card">
-        <img src="/images/staff-3.jpg" class="staff-photo" alt="Katarina Haerewa"
-             onerror="this.outerHTML='<div class=\'staff-photo-ph\'><span>staff-3.jpg</span></div>'">
-        <h4>Katarina Haerewa</h4>
-        <div class="role">Bookkeeper</div>
-        <p>Managing day-to-day financial records in partnership with Blakeman &amp; Co.</p>
-      </div>
-    </div>
   </div>
 </section>
 
