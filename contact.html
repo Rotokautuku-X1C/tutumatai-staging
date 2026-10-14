@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="description" content="Contact Tutumatai Station and the Rotokautuku X1C Committee of Management."><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Contact — Tutumatai Station</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32.png">
@@ -17,7 +18,9 @@
 .eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,0.4);}
 .hero h1{font-family:'Dancing Script',cursive;font-size:clamp(2.2rem,5vw,4.2rem);color:white;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:0.5rem;}
 .hero-sub{color:rgba(255,255,255,0.78);font-size:0.97rem;font-weight:300;max-width:500px;line-height:1.6;}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1000px;margin:2rem auto 0;align-items:start;}
+.contact-grid{display:grid;grid-template-columns:1fr;max-width:1000px;margin:0 auto;}
+.contact-details{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:1.2rem;}
+@media(max-width:768px){.contact-details{grid-template-columns:1fr;gap:0.5rem;}}
 .contact-block{margin-bottom:1.8rem;}
 .contact-block h4{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pasture);font-weight:600;margin-bottom:0.5rem;}
 .contact-block p{font-size:0.9rem;color:var(--text-mid);font-weight:300;line-height:1.6;}
@@ -69,7 +72,7 @@
   <div class="eyebrow">Get in touch · Shareholder enquiries · Farm</div>
   <h1>Contact Us</h1>
   <p class="hero-sub">Reach the Committee of Management, ask about shareholding, or get in touch about the station.</p>
-  <img src="/images/contact-hero.jpg?v=20261015a" class="fh-photo" alt="Walker Rd sign beside the station" style="object-position:center 40%;">
+  <img src="/images/contact-hero-web.jpg?v=20261015a" class="fh-photo" alt="Walker Rd sign beside the station" style="object-position:center 40%;">
 </section>
 
 <section class="section cream">
@@ -79,13 +82,10 @@
         <div class="sec-label">Get in touch</div>
         <h2>We'd love to hear from you</h2>
         <!-- ✏️ Update contact details below -->
+        <div class="contact-details">
         <div class="contact-block">
           <h4>Physical address</h4>
           <p>Tutumatai Station<br>307 Mangaoporo Road, RD 3<br>Ruatoria, Tairāwhiti 4082</p>
-        </div>
-        <div class="contact-block">
-          <h4>Postal address</h4>
-          <p>The Committee of Management<br>Rotokautuku X1C Incorporation<br>[Postal address — to be confirmed]</p>
         </div>
         <div class="contact-block">
           <h4>Email</h4>
@@ -95,34 +95,8 @@
           <h4>Chairperson</h4>
           <p>Audine Grace-Kutia<br><a href="mailto:audine.gracekutia@tutumataistation.nz">audine.gracekutia@tutumataistation.nz</a></p>
         </div>
-        <div class="map-ph">
-          <p style="font-size:1.5rem;">📍</p>
-          <p style="font-size:0.8rem;color:var(--text-light);text-align:center;font-weight:300;">Mangaoporo Road, Ruatoria · Tairāwhiti<br><span style="font-size:0.7rem;opacity:0.6;">Interactive map coming soon</span></p>
-        </div>
       </div>
-      <div>
-        <div class="sec-label">Send a message</div>
-        <h2>Enquiry form</h2>
-        <!-- ✏️ Add/edit enquiry types in the select options -->
-        <div class="contact-form">
-          <div class="form-row"><label>Your name</label><input type="text" placeholder="Full name"></div>
-          <div class="form-row"><label>Email address</label><input type="email" placeholder="your@email.com"></div>
-          <div class="form-row">
-            <label>Enquiry type</label>
-            <select>
-              <option>General enquiry</option>
-              <option>Shareholder enquiry</option>
-              <option>Education grant</option>
-              <option>AGM / governance</option>
-              <option>Farm operations</option>
-              <option>Media</option>
-            </select>
-          </div>
-          <div class="form-row"><label>Message</label><textarea placeholder="How can we help?"></textarea></div>
-          <button class="form-submit" disabled style="opacity:0.5;cursor:not-allowed;">Online Form Coming Soon</button>
-          <p style="font-size:0.72rem;color:var(--text-light);margin-top:0.8rem;text-align:center;font-weight:300;">In the meantime please email <a href="mailto:info@tutumataistation.nz">info@tutumataistation.nz</a></p>
         </div>
-      </div>
     </div>
   </div>
 </section>
