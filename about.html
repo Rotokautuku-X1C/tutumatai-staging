@@ -61,7 +61,7 @@
 @media(max-width:480px){
   .founder-photos{flex-direction:column;align-items:center;}
 }
-.com-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
+.com-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:0;}
 .person-card{background:white;border-top:3px solid var(--pasture);overflow:hidden;}
 .person-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;}
 .person-photo-ph{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,#2a3a2a,#1a2a1a);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
@@ -69,22 +69,18 @@
 .person-body{padding:0.9rem;}
 .person-name{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--sky-dark);margin-bottom:0.1rem;line-height:1.2;}
 .person-role{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--pasture);font-weight:600;margin-bottom:0.4rem;}
-  .g1-featured{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:22px;margin-bottom:26px;align-items:stretch}
+  .g1-featured{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem;align-items:stretch}
+  .g1-featured .boy-feature{grid-column:span 2;}
   .g1-dates{color:#9a978f;font-size:0.82rem;margin:2px 0 3px;}
   .g1-feature-text{background:#fff;border:1px solid #e6e3da;border-radius:8px;padding:20px 22px;display:flex;align-items:center;color:#6b6b63;font-style:italic;line-height:1.6}
 @media(max-width:900px){.com-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:768px){.com-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:760px){.g1-featured{grid-template-columns:1fr}}
-.boy-panel{border:none !important;display:grid !important;grid-template-columns:1fr minmax(220px,52%);gap:0;align-items:center !important;padding:0 !important;overflow:hidden;}
-.boy-feature{font-style:normal;background:var(--sky-dark);height:100%;display:flex;flex-direction:column;justify-content:center;padding:1.6rem 1.8rem;}
+@media(max-width:900px){.g1-featured{grid-template-columns:repeat(2,1fr)}.g1-featured .boy-feature{grid-column:1 / -1;}}
+.boy-feature{font-style:normal;background:var(--sky-dark);border-top:3px solid var(--pasture);display:flex;flex-direction:column;justify-content:center;padding:1.6rem 1.8rem;}
 .bf-eyebrow{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(150,200,100,0.9);font-weight:600;margin-bottom:0.5rem;}
 .bf-title{font-family:'Dancing Script',cursive;font-size:1.6rem;color:#fff;line-height:1.15;margin-bottom:0.8rem;}
 .boy-feature p{color:rgba(255,255,255,0.82);font-style:normal;font-size:0.95rem;font-weight:300;line-height:1.7;margin:0;}
-.boy-photo{margin:0;height:100%;position:relative;}
-.boy-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;min-height:260px;}
-.boy-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:0.5rem 0.8rem;font-size:0.68rem;letter-spacing:0.06em;color:rgba(255,255,255,0.9);font-style:normal;background:linear-gradient(to top,rgba(0,0,0,0.45),transparent);}
-@media(max-width:760px){.boy-panel{grid-template-columns:1fr;gap:0;}.boy-photo img{max-height:340px;}}
-</style>
+@media(max-width:760px){</style>
 </head>
 <body>
 
@@ -169,6 +165,11 @@
     <p class="lead">The first generation — the tamariki of Raana Te Iti Walker and Mary Roa Milner, shown with their spouses.</p>
 
     <div class="g1-featured">
+      <div class="boy-feature">
+          <div class="bf-eyebrow">1932 · Taking over the whenua</div>
+          <div class="bf-title">Boy and Nanny Walker</div>
+          <p>Following the unexpected passing of Papa Raana Te Iti in 1932, Boy took over running the farm with Nanny Walker, at the age of 22 — with 13 children at home aged from 3 to 22.</p>
+      </div>
       <div class="person-card">
         <img src="/images/g1-1.jpg?v=20261014b" class="person-photo" alt="Raana Tuterangi"
              onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-1.jpg</span></div>'">
@@ -178,16 +179,14 @@
           <div class="person-role">m. Ani Reedy</div>
         </div>
       </div>
-      <div class="g1-feature-text boy-panel">
-        <div class="boy-feature">
-          <div class="bf-eyebrow">1932 · Taking over the whenua</div>
-          <div class="bf-title">Boy and Nanny Walker</div>
-          <p>Following the unexpected passing of Papa Raana Te Iti in 1932, Boy took over running the farm with Nanny Walker, at the age of 22 — with 13 children at home aged from 3 to 22.</p>
+      <div class="person-card">
+        <img src="/images/g1-10.jpg?v=20261015a" class="person-photo" alt="Florence Wharepapa (Girlie)"
+             onerror="this.outerHTML='<div class=\'person-photo-ph\'><span>g1-10.jpg</span></div>'">
+        <div class="person-body">
+          <div class="person-name">Florence Wharepapa (Girlie)</div>
+          <div class="g1-dates">b. 1910</div>
+          <div class="person-role">m. Nepe Apatu</div>
         </div>
-        <figure class="boy-photo">
-          <img src="/images/walker-rd.jpg?v=20261014a" alt="Walker Rd sign beside the paddocks at Tutumatai" width="865" height="913">
-          <figcaption>Walker Rd, Tutumatai</figcaption>
-        </figure>
       </div>
     </div>
 
